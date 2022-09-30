@@ -1,0 +1,124 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/9/28下午1:37:50
+使用方法：
+在 E:\pj交接\趣神游\one\miniprogram\pages\find\find.wxml 引入模板
+
+```
+<import src="find.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\pj交接\趣神游\one\miniprogram\pages\find\find.wxss 中引入样式
+```
+@import "./find.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view style="padding: 0 0 7px ;">
+      <view class="topOne">
+        <view class="bcOne flex align-center">
+          <view is="pages/top/top" class="bcOne2">
+            <view class="relative top--relative" style="height: 84px;background: none;top: 0;left: 0;width: 100%;z-index: 99999;">
+              <view style="height: 84px;">
+                <view style="height:44px;width: 100%;"></view>
+                <view class="flex top--flex align-center top--align-center aaa top--aaa" style="height: 40px;">
+                  <view></view>
+                  <view style="width: 100vw;">
+                    <view class="flex top--flex align-center top--align-center top_me top--top_me fs24 top--fs24" style="true">
+                      <view class="newBtn top--newBtn active top--active sk-transparent sk-text-25-0000-677 sk-text" data-type="send" style="background-position-x: 50%;">发现
+                      </view>
+                      <view class="newBtn top--newBtn sk-transparent sk-text-25-0000-220 sk-text" data-type="me" style="background-position-x: 50%;">我的
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view style="padding:8px 12px 0">
+          <view class="searchBtn sk-transparent">
+            <image class="sk-image"></image>关键词</view>
+          <scroll-view scroll-x="true">
+            <view class="scrollBox">
+              <view class="typeItem active sk-transparent sk-text-14-2857-520 sk-text" data-type="tj">
+                推荐
+              </view>
+              <view class="typeItem sk-transparent sk-text-14-2857-678 sk-text" data-type="1">美食</view>
+              <view class="typeItem sk-transparent sk-text-14-2857-701 sk-text" data-type="7">自驾</view>
+              <view class="typeItem sk-transparent sk-text-14-2857-467 sk-text" data-type="2">亲子</view>
+              <view class="typeItem sk-transparent sk-text-14-2857-810 sk-text" data-type="6">户外</view>
+              <view class="typeItem sk-transparent sk-text-14-2857-803 sk-text" data-type="10">旅拍</view>
+              <view class="typeItem sk-transparent sk-text-14-2857-199 sk-text" data-type="11">海岛</view>
+              <view class="typeItem sk-transparent sk-text-14-2857-74 sk-text" data-type="8">网红打卡</view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <view is="pages/work/work">
+        <view class="zp work--zp flex work--flex flex-wrap work--flex-wrap space-between work--space-between relative work--relative">
+          <view class="zp_c work--zp_c bg_white work--bg_white" data-id="3382" data-index="0" data-type="1">
+            <view class="relative work--relative">
+              <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+            </view>
+            <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+              <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-810 sk-text" style="font-weight: 700;">江南古镇｜ 中国第一水乡，周庄古镇</view>
+              <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                <image class="zp_ar work--zp_ar sk-image"></image>
+                <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-944 sk-text">方荟麓</view>
+                <image class="zp_zan work--zp_zan sk-image"></image>
+                <view class="sk-transparent sk-opacity">3</view>
+              </view>
+            </view>
+          </view>
+          <view class="zp_c work--zp_c bg_white work--bg_white" data-id="3383" data-index="1" data-type="1">
+            <view class="relative work--relative">
+              <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+            </view>
+            <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+              <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-890 sk-text" style="font-weight: 700;">淮安美食篇</view>
+              <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                <image class="zp_ar work--zp_ar sk-image"></image>
+                <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-575 sk-text">我不是黄蓉，我不会武功</view>
+                <image class="zp_zan work--zp_zan sk-image"></image>
+                <view class="sk-transparent sk-opacity">40</view>
+              </view>
+            </view>
+          </view>
+          <view class="zp_c work--zp_c bg_white work--bg_white" data-id="3387" data-index="2" data-type="1">
+            <view class="relative work--relative">
+              <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+            </view>
+            <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+              <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-765 sk-text" style="font-weight: 700;">徐州游记</view>
+              <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                <image class="zp_ar work--zp_ar sk-image"></image>
+                <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-197 sk-text">我不是黄蓉，我不会武功</view>
+                <image class="zp_zan work--zp_zan sk-image"></image>
+                <view class="sk-transparent sk-opacity">36</view>
+              </view>
+            </view>
+          </view>
+          <view class="zp_c work--zp_c bg_white work--bg_white" data-id="3388" data-index="3" data-type="1">
+            <view class="relative work--relative">
+              <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+            </view>
+            <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+              <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-322 sk-text" style="font-weight: 700;">溱湖湿地公园</view>
+              <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                <image class="zp_ar work--zp_ar sk-image"></image>
+                <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-266 sk-text">我不是黄蓉，我不会武功</view>
+                <image class="zp_zan work--zp_zan sk-image"></image>
+                <view class="sk-transparent sk-opacity">36</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

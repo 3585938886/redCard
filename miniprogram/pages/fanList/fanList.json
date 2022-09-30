@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "visitorItem":"../visitorItem/visitorItem"
+  },
+  "navigationBarTitleText": "粉丝列表"
+}

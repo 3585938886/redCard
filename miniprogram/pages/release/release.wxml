@@ -1,0 +1,68 @@
+<!--pages/release/release.wxml-->
+<view class="relese" style="margin-bottom:150rpx" hidden="{{dynamics==0}}">
+  <view class="flex flex-wrap release_top">
+    <block wx:if="{{!imgs.length}}">
+      <view style="margin-right: 24rpx;">
+        <view wx:if="{{videoUrl}}" class="relative">
+          <video src="{{videoUrl}}" class="to_img"></video>
+          <block>
+            <image wx:if="{{imgUrl}}" bindtap="previewImage" class="imgUrl" src="{{imgUrl}}">
+            </image>
+            <view wx:else class="upLoadBtn" bindtap="file_img">
+              <view class="addFm">
+                <image src="../../images/group440@2x.png"></image>
+                <view>添加封面</view>
+              </view>
+            </view>
+
+          </block>
+        </view>
+        <view wx:if="{{true}}" class="editLine flex space-between">
+          <view bindtap="previewMedia" wx:if="{{videoUrl}}">
+            <image src="../../images/polygon4@2x.png"></image> 预览视频
+          </view>
+          <view wx:if="{{imgUrl}}" bindtap="file_img">
+            <image src="../../images/group442@2x.png"></image> 修改封面
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:for="{{imgs}}" wx:key="index">
+      <view class="relative">
+        <image bindtap="previewImage2" data-index="{{index}}" class="imgs" src="{{item}}"></image>
+        <image class="absolute delclose" catchtap="delClose" data-index="{{index}}" src="../../images/delClose.png"></image>
+      </view>
+    </block>
+
+    <view hidden="{{videoUrl||imgs.length>=9}}" class="flex align-center justify-center add_img to_img" bindtap="file_video">
+      <image src="../../images/group432@2x.png"></image>
+    </view>
+  </view>
+  <view>
+    <input type="text" bindinput="setTitle" value="{{title}}" class="release_top fs28" placeholder="记得填写标题哦~" placeholder-class="theme2" />
+    <textarea name="" id="" bindinput="setWord" value="{{word}}" class="fs28 release_top relese" placeholder="添加正文" placeholder-class="theme2" 	maxlength="-1"></textarea>
+    <view bindtap="aa" class="flex align-center release_top" style="border-top: 1rpx solid #F7F7F7;border-bottom: 1rpx solid #F7F7F7;">
+      <image src="../../images/group377@2x.png" class="address"></image>
+      <view wx:if="{{address}}" class="fs28" style="flex: 1;margin-left: 8rpx;">{{address}}</view>
+      <view wx:else class="fs28" style="flex: 1;margin-left: 8rpx;">添加地点（*便于更多人看到您的笔记）</view>
+      <image src="../../images/vector10@2x.png" class="add_sele"></image>
+    </view>
+    <view class="title2">
+       推荐标签
+    </view>
+    <scroll-view scroll-x="true">
+        <view class="scrollBox">
+          <block wx:for="{{typeList}}" wx:key="index">
+            <view class="typeItem {{typeId==item.id?'active':''}}" bindtap="tabChange" data-typeId="{{item.id}}">{{item.category_name}}</view>
+          </block>
+        </view>
+      </scroll-view>
+  </view>
+
+</view>
+<view class="fixed release_btn" hidden="{{dynamics==0}}">
+  <view bindtap="set_dynamics_info" class=" text-center white fs32 font-bold">
+    发布动态
+  </view>
+</view>

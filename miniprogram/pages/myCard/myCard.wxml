@@ -1,0 +1,156 @@
+<!--pages/myCard/myCard.wxml-->
+<import src="myCard.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" data="{{customBar,statusBarHeight}}" />
+<!-- <view >
+  <Top  class="bcOne2" find="index" bg_color="none" isBack="{{!share?true:false}}" type="3"></Top>
+</view> -->
+<Music bgm_music="{{info.bgm_music}}" wx:if="{{info}}" />
+<view wx:if="{{info}}">
+  <image src="{{info.bgm}}" mode="aspectFill" class="bg"></image>
+  <view class="relative cont">
+    <view class="bg_white br pc ">
+      <view class="flex align-center">
+        <view class="relative avatar_c">
+          <image src="{{info.head}}" class="avatar"></image>
+          <image src="/images/svs.png" class="sex absolute" wx:if="{{info.sex==1}}"></image>
+          <image src="/images/vevwve.png" class="sex absolute" wx:if="{{info.sex==2}}"></image>
+        </view>
+        <view class="company_r">
+          <view class="flex align-center">
+            <view class="fs36 font-bold name">{{info.name}}</view>
+            <view class="fs28">{{info.job}}</view>
+          </view>
+          <view class="flex align-center" style="margin-top: 10rpx;">
+            <view class="fs28 company theme5">{{info.company_name}}</view>
+            <image src="/images/dfbdf.png" class="trv" wx:if="{{info.is_authentication==1}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="flex align-center justify-center" style="margin:20rpx 0">
+        <view class="flex align-center koubei empty_demo" wx:if="{{info.opinions}}">
+          <view class="fs24 text-center white">口碑</view>
+          <view class="fs24 text-center" wx:if="{{info.opinions>80}}">{{info.opinions}}高</view>
+          <view class="fs24 text-center" wx:elif="{{info.opinions>60 && info.opinions<80 }}">{{info.opinions}}中</view>
+          <view class="fs24 text-center" wx:else="{{info.opinions<60}}">{{info.opinions}}低</view>
+        </view>
+        <view class="fs20 city nowrap" wx:if="{{info.province}}" bindtap="tofriendsList" data-title="{{info.city}}" data-thisid="1">{{info.province==info.city?info.city :info.province + info.city}}</view>
+        <view class="fs20 city nowrap" wx:if="{{info.university}}" bindtap="tofriendsList" data-thisid="3" data-title="{{info.university}}">{{info.university}}</view>
+        <view class="fs20 city nowrap" wx:if="{{info.industry}}">{{info.industry}}</view>
+      </view>
+      <view class="flex align-center space-around" style="padding: 20rpx 0;">
+        <view class="fs_num text-center" bindtap="fans" data-type="fans">
+          <view class="fs40 font-bold">{{info.fans}}</view>
+          <view class="fs20">粉丝</view>
+        </view>
+        <view class="fs_num text-center">
+          <view class="fs40 font-bold">{{info.zan}}</view>
+          <view class="fs20">点赞</view>
+        </view>
+        <view class="fs_num text-center">
+          <view class="fs40 font-bold">{{info.star}}</view>
+          <view class="fs20">收藏</view>
+        </view>
+        <view class="fs_num text-center" bindtap="fans" data-type="visitor">
+          <view class="fs40 font-bold">{{info.visitor}}</view>
+          <view class="fs20">访客</view>
+        </view>
+      </view>
+    </view>
+    <view class="bg_white br pc fs32 jiyu_c" wx:if="{{info.introduction}}">
+      <view style="margin-bottom: 5rpx;">您好：</view>
+      <view class="jiyu">{{info.introduction}}</view>
+      <view class="flex align-center justify-end" style="margin-top: 40rpx;">
+        <image src="{{info.head}}" class="as"></image>
+        <view class="fs28" style="margin:0 10rpx">{{info.name}}</view>
+        <image src="/images/vsve.png" class="mess" bindtap="message"></image>
+      </view>
+    </view>
+    <view class="br fs32 jiyu_c1 jiyu_c">
+      <view  wx:if="{{info.business}}" style="background: url('https://zy-znmp.oss-cn-shanghai.aliyuncs.com/qushenyo/362856_1664434418497_0K1ZE2KFaquH6374f0bc631ad3b3d7a2c2db414b2b7e.png') no-repeat;background-size: 100%;width: 646rpx;">
+        <view style="padding:42rpx 32rpx;">
+          <view class="fs36 font-bold text-center" style="margin-bottom: 30rpx;">业务介绍</view>
+          <view class="fs32" style="color: #444444;line-height: 50rpx;">{{info.business}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="bg_white br" wx:if="{{top_list.length}}">
+      <swiper style="height:456rpx" autoplay indicator-dots indicator-active-color="#FA7C7C">
+        <block wx:for="{{top_list}}" wx:key="index">
+          <swiper-item>
+            <view class="pc" bindtap="notesInfo" data-id="{{item.id}}" data-type="{{item.type}}">
+              <view class="flex align-center">
+                <view class="relative gonnue">
+                  <image src="{{item.imgs[0]}}" class="dk" mode="aspectFill"></image>
+                  <view class="flex align-center absolute zannum fs20 white">
+                    <image src="/images/vsew.png" class="zan"></image><text>{{item.zan}}</text>
+                  </view>
+                </view>
+                <view class="gonnue_r">
+                  <view class="fs32 font-bold theme1 lin2">{{item.title}}</view>
+                  <view class="fs28">{{item.get_author_info.name}}</view>
+                  <view class="fs20">{{item.content}}</view>
+                </view>
+              </view>
+              <view class="flex align-center space-between" style="margin-top: 60rpx;">
+                <view class="fs24 font-bold" catchtap="notes" data-id="{{item.uid}}">查看更多我的笔记</view>
+                <view class="fs20" style="color: #C4C4C4;">{{item.created_at}}</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="bg_white br" wx:if="{{info.get_honor_list.length}}">
+      <swiper style="height:156rpx" indicator-dots indicator-active-color="#FA7C7C">
+        <block wx:for="{{info.get_honor_list}}" wx:key="index">
+          <swiper-item>
+            <view class="flex align-center jiang_item">
+              <image src="/images/vvaww.png" class="jiang"></image>
+              <view>
+                <view class="fs32">{{item.name}}</view>
+                <view class="fs28" style="color:#ABABAB;margin-top: 5rpx;">由 <text style="padding: 0 10rpx;">{{item.company}}</text> 颁发</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="bg_white br" wx:if="{{info.get_part_time_list.length}}">
+      <swiper style="height:156rpx" indicator-dots indicator-active-color="#FA7C7C">
+        <block wx:for="{{info.get_part_time_list}}" wx:key="index">
+          <swiper-item>
+            <view class="flex align-center jiang_item">
+              <image src="/images/sdvsd.png" class="jiang"></image>
+              <view>
+                <view class="fs32">{{item.company}}</view>
+                <view class="fs28" style="color:#ABABAB;margin-top: 5rpx;">{{item.job}}</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="bg_white br pc " wx:if="{{info.phone || info.wechat || info.address}}">
+      <view class="er_info flex " wx:if="{{info.phone}}">
+        <image src="/images/ass1.png"></image>
+        <view class="fs32">{{info.phone}}</view>
+        <view class="text-center fs28" bindtap="operate" data-type="phone">拨打</view>
+      </view>
+      <view class="er_info flex " wx:if="{{info.wechat}}">
+        <image src="/images/ass2.png"></image>
+        <view class="fs32">{{info.wechat}}</view>
+        <view class="text-center fs28" bindtap="operate" data-type="copy">复制</view>
+      </view>
+      <view class="er_info flex " wx:if="{{info.address}}">
+        <image src="/images/ass3.png"></image>
+        <view class="fs32">{{info.address}}</view>
+        <view class="text-center fs28" bindtap="operate" data-type="go">前往</view>
+      </view>
+    </view>
+  </view>
+  <view class="flex justify-center home fixed align-center fs24 white" wx:if="{{info}}">
+    <block wx:for="{{['主页','笔记']}}" wx:key="index">
+      <view class="{{currentIndex==index?'active':''}}" style="transform: translateX(144 * {{currentIndex}}rpx);transition: all 0.3s ease;" bindtap="home" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+</view>

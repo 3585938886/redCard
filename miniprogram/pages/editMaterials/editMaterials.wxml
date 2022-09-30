@@ -1,0 +1,218 @@
+<!--pages/editMaterials/editMaterials.wxml-->
+<import src="editMaterials.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" data="{{customBar,statusBarHeight}}" />
+<view style="width: 100vw;overflow:hidden" wx:if="{{userName}}">
+  <view class="pd12" style="padding:24rpx 24rpx {{isPhonex?'240rpx':'130rpx'}}">
+    <form bindsubmit="formSubmit">
+      <view class="photo">
+        <view class="relative">
+          <image wx:if="{{imgUrl}}" class="tx" bindtap="uploadImg" mode="aspectFill" src="{{imgUrl}}"></image>
+          <image wx:else bindtap="uploadImg" mode="aspectFill" src="../../images/Ellipse 372@2x.png"></image>
+          <image class="photo1" src="../../images/group388@2x.png"></image>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>昵称：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input value="{{userName}}" name="userName" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>性别：</view>
+          <view style="width: 240rpx; margin-right: 24rpx;" class="flex space-between">
+            <!-- <input value="{{sex}}" name="sex" type="text"/>
+               -->
+            <label class="radio" bindtap="setSex1">
+              <radio value="r1" name="sex" checked="{{sex==1}}" />男
+            </label>
+            <label class="radio" bindtap="setSex2">
+              <radio value="r2" name="sex" checked="{{sex==2}}" />女
+            </label>
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell cell2 flex space-between" bindtap="setBcImg">
+          <view>背景图：</view>
+          <view style="width: 200rpx;" class="flex space-between">
+            <view hidden="{{bgm}}" class="f_s32" style="width: 100rpx;">上传</view>
+            <image catchtap="previewImage" data-img="{{bgm}}" hidden="{{!bgm}}" src="{{bgm}}" class="skt"></image>
+            <image src="../../images/vector10@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell cell2 flex space-between">
+          <view>个人简介：</view>
+          <view style="width: 480rpx;" class="flex space-between">
+            <textarea class="text-left" placeholder="有趣的介绍可以吸引粉丝" placeholder-class="placeholderInput" style="width: 480rpx;" value="{{introduction}}" name="introduction"/>
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <!-- 背景音乐 -->
+      <!-- <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>背景音乐：</view>
+          <view style="width: 360rpx;" class="flex space-between" bindtap="upmusic">
+            <input placeholder="上传音乐" disabled placeholder-class="placeholderInput" value="{{bgm_music?'切换音乐':''}}" name="bgm_music" type="text" />
+            <image src="../../images/vector10@2x.png"></image>
+          </view>
+        </view>
+      </view> -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>联系方式：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="手机号码" placeholder-class="placeholderInput" value="{{phone}}" name="phone" type="number" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>微信：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写微信号" placeholder-class="placeholderInput" value="{{wechat}}" name="wechat" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>城市：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <picker mode="region" value="{{region}}" bindchange="bindRegionChange">
+              <view class="flex align-center">
+                <view class="ads f_s32" wx:if="{{region.length}}">{{region[0]}} {{region[1]}}</view>
+                <view class="ads f_s32" wx:else>{{city?city:'请选择您所在地区'}}</view>
+              </view>
+            </picker>
+            <image src="../../images/vector10@2x.png" wx:if="{{!region}}"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 大学 -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>大学：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写你的大学" placeholder-class="placeholderInput" value="{{university}}" name="university" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <!-- 高中 -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>高中：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写你的高中" placeholder-class="placeholderInput" value="{{high_school}}" name="high_school" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>企业：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写你的公司" placeholder-class="placeholderInput" value="{{company_name}}" name="company_name" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view> 职位：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写职位" placeholder-class="placeholderInput" value="{{job}}" name="job" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <!-- 兼任 -->
+      <!-- <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>兼任：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input value="{{part_time}}" name="part_time" type="text" />
+            <image src="../../images/vector10@2x.png"></image>
+          </view>
+        </view>
+      </view> -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>兼任：</view>
+          <view style="width: 360rpx;" class="flex space-between" bindtap='toParttime'>
+            <input placeholder="添加兼任岗位" 
+            disabled="{{true}}"
+            placeholder-class="placeholderInput" value="{{part_time}}" name="part_time" type="text" />
+            <image src="../../images/vector10@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 行业 -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>行业：</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写行业" placeholder-class="placeholderInput" value="{{industry}}" name="industry" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <!-- 荣誉 -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>荣誉：</view>
+          <view style="width: 360rpx;" class="flex space-between" bindtap='toHonor'>
+            <input placeholder="添加荣誉" 
+            disabled="{{true}}"
+            placeholder-class="placeholderInput" value="{{honor}}" name="honor" type="text" />
+            <image src="../../images/vector10@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 业务介绍 -->
+      <view class="formBoj">
+        <view class="cell flex space-between cell2">
+          <view>业务介绍：</view>
+          <view style="width: 480rpx;" class="flex space-between">
+            <textarea placeholder="让更多人了解您的业务" maxlength="1000" class="text-left" placeholder-class="placeholderInput" style="width: 480rpx;" value="{{business}}" name="business"/>
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <!-- 企业认证 -->
+      <view class="formBoj">
+        <view class="cell cell2 flex space-between" bindtap="setAttestation">
+          <view>企业认证(请上传营清晰的业执照)：</view>
+          <view style="width: 120rpx;" class="flex space-between">
+            <view hidden="{{attestation}}" class="f_s32" style="width: 80rpx;">上传</view>
+            <image catchtap="previewImage" data-img="{{attestation}}" hidden="{{!attestation}}" src="{{attestation}}" class="skt"></image>
+            <image src="../../images/vector10@2x.png" wx:if="{{!attestation}}"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 企业关键词 -->
+      <view class="formBoj">
+        <view class="cell flex space-between">
+          <view>企业关键词(方便用户搜索)</view>
+          <view style="width: 360rpx;" class="flex space-between">
+            <input placeholder="填写关键词" placeholder-class="placeholderInput" value="{{keywords}}" name="keywords" type="text" />
+            <!-- <image src="../../images/vector10@2x.png"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="sendBtn fixed" style="padding:20rpx 0 {{isPhonex?'60rpx':'20rpx'}} 0">
+        <button form-type="submit">保存</button>
+      </view>
+    </form>
+  </view>
+</view>

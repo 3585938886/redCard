@@ -1,0 +1,43 @@
+<!--pages/search/search.wxml-->
+<view class="box sticky bg_white" style="top: 0;left: 0;z-index: 99999;">
+  <view class="flex space-between">
+    <view class="inputLine">
+      <image class="logoImg" src="../../images/logo.png"></image>
+      <input class="searchInput" 	confirm-type="search" bindconfirm="search" bindinput="words" type="text" placeholder="目的地/景点/关键词" value="{{key_word}}" />
+      <image hidden="{{!key_word}}" bindtap="clear" class="clearClose" src="../../images/clearClose.png"></image>
+    </view>
+  </view>
+  <view hidden="{{key_word}}">
+    <view>
+      <view class="flex space-between lisl">
+        <view>历史记录</view>
+        <view bindtap="delHistory">删除</view>
+      </view>
+      <view class="historyList flex">
+        <block wx:for="{{historyList}}" wx:key="index">
+          <view class="historyItem" bindtap="searchItem" data-word="{{item}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+    <view style="margin-top: 24rpx;">
+      <view class="lisl">
+        <view>热门搜索</view>
+      </view>
+      <view class="historyList flex">
+        <block wx:for="{{hotWords}}" wx:key="index">
+          <view class="historyItem" bindtap="searchItem2" data-word="{{item.keyword}}">{{item.keyword}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!key_word}}" style="background-color:  #F2F2F2;padding-bottom: 10rpx; min-height: 1228rpx;">
+  <Work data="{{work}}" />
+  <view style="height: calc(100vh - 200rpx);" class="flex align-center justify-center" wx:if="{{worktype}}">
+    <!-- <noData img="../../images/rtdw.png" /> -->
+    <view class="text-center">
+      <image src="../../images/noSearch.png" class="nod_img"></image>
+      <view class="fs28 theme3">无搜索结果，换个词试试吧~</view>
+    </view>
+  </view>
+</view>

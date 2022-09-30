@@ -1,0 +1,268 @@
+/* pages/me/me.wxss */
+@import "../visitorItem/visitorItem.scss";
+@import "me.skeleton.wxss";
+
+page {
+  background: #F0F0F0;
+}
+
+// .share_img {
+//   width: 32rpx;
+//   height: 32rpx;
+// }
+
+.me_bg {
+  height: 752rpx;
+  width: 100%;
+}
+
+.theLabel {
+  min-width: 600rpx;
+  height: 40rpx;
+  margin-top: 24rpx;
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+
+  .koubei {
+    width: 170rpx;
+    height: 40rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+      width: 68rpx;
+      height: 40rpx;
+      font-size: 24rpx;
+      color: #fff;
+      text-align: center;
+      line-height: 40rpx;
+      background: #E96161;
+      border-radius: 8rpx 0rpx 0rpx 8rpx;
+      opacity: 1;
+    }
+
+    .num {
+      width: 102rpx;
+      height: 40rpx;
+      font-size: 24rpx;
+      color: #E96161;
+      text-align: center;
+      line-height: 40rpx;
+      background: #FFFFFF;
+      border-radius: 0rpx 8rpx 8rpx 0rpx;
+      opacity: 1;
+    }
+  }
+
+  .labels {
+    min-width: 300rpx;
+    height: 40rpx;
+    border-radius: 20rpx;
+    display: flex;
+    align-items: center;
+
+    // background-color: pink;
+    .label,.label1 {
+      height: 40rpx;
+      font-size: 24rpx;
+      padding: 0 15rpx 0 15rpx;
+      margin-left: 10rpx;
+      border-radius: 20rpx;
+      color: #fff;
+      text-align: center;
+      line-height: 40rpx;
+      background: rgba(17, 17, 17, 0.32);
+      max-width: 140rpx;
+    }
+    .label1{
+      max-width: 190rpx;
+    }
+  }
+}
+.tocard{
+  width: 134rpx;
+  height: 60rpx;
+  position: absolute;
+  right: -10rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #E96161;
+  border-radius: 30rpx 0 0 30rpx;
+}
+
+.share_img{
+  // background-color: red;
+  position: absolute;
+  right: 30rpx;
+  top: 430rpx;
+}
+.share_img image,
+.share_img button {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.share_img button {
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.pd {
+  padding: 24rpx;
+  padding-top: 200rpx;
+}
+
+.message {
+  width: 116rpx;
+  height: 60rpx;
+}
+
+.zi_x {
+  width: 152rpx;
+  height: 60rpx;
+  background: rgba(217, 217, 217, 0.3400);
+  background-color: #FD7171;
+  font-weight: 500;
+  border-radius: 35px 35px 35px 35px;
+  line-height: 60rpx;
+  margin-right: 30rpx;
+}
+
+.me_body {
+  top: 652rpx;
+  left: 0;
+  width: 100%;
+  border-radius: 24rpx 24rpx 0rpx 0rpx;
+  overflow: hidden;
+}
+
+.bt {
+  bottom: 0;
+  width: 33.33%;
+
+}
+
+.bt view {
+  width: 50rpx;
+  height: 6rpx;
+  background: #F45E5E;
+  border-radius: 2rpx 2rpx 2rpx 2rpx;
+}
+
+.navs view {
+  padding: 16rpx 16rpx 10rpx 16rpx;
+  width: 33.33%;
+  text-align: center;
+}
+
+.v_btn {
+  top: 18rpx;
+  right: 14rpx;
+  z-index: 99;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 999;
+}
+
+.add {
+  bottom: 64rpx;
+  right: 24rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: var(--theme);
+  z-index: 999;
+}
+
+.add image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.bottom-tc {
+  position: fixed;
+  bottom: 0;
+  z-index: 1001;
+  height: 280rpx;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 24rpx 24rpx 0 0;
+  transform: translateY(280rpx);
+}
+
+.bottom-tc>view {
+  text-align: center;
+  height: 93rpx;
+  line-height: 93rpx;
+}
+
+.shaowdow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: .3;
+  z-index: 1000;
+  background-color: #2F2D2D;
+}
+
+.active-tc {
+  transform: translateY(0);
+  transition: all .5s;
+}
+
+.bbb {
+  width: 100vw;
+  height: 100vh;
+  transition: all .5s;
+}
+
+.share_img image,
+.share_img button {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.share_img button {
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.brs {
+  border-radius: 24rpx 24rpx 0 0;
+}
+
+.topOne {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.scroll {
+  height: calc(100vh - 752rpx);
+  overflow-y: scroll;
+}
+.authentication image:nth-child(1){
+  width: 28rpx;
+  height: 28rpx;
+}
+.authentication{
+  background: #FFF8F8;
+  height: 60rpx;
+  border-radius: 8rpx;
+  padding: 0 24rpx;
+  margin: 16rpx 24rpx;
+}
+.authentication view{
+  color: #FF4A4A;
+  flex: 1;
+  margin:0 16rpx;
+}
+.authentication image:nth-child(3){
+  width: 12rpx;
+  height: 20rpx;
+}

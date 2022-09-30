@@ -1,0 +1,33 @@
+/* pages/introduction/introduction.wxss */
+.content_b{
+  margin-bottom: 52rpx;
+}
+.home_title{
+   padding: 24rpx 0;
+}
+.label1{
+  margin-left: 36rpx;
+  text-align: left;
+}
+.label{
+  margin-left: 36rpx;
+}
+.label view{
+  width: 98rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-right: 12rpx;
+}
+.label view:nth-child(1){
+   background: #37969A;
+}
+.label view:nth-child(2){
+  background: #2F5FCC;
+}
+.label view:nth-child(3){
+  background: #7058C5;
+}
+.desc{
+  margin-bottom: 24rpx;
+  
+}

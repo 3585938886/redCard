@@ -1,0 +1,36 @@
+<!--pages/top/top.wxml-->
+<view class="{{fixed?'fixed':'relative'}}" style="height: {{customBar}}px;background: {{bg_color}};top: 0;left: 0;width: 100%;z-index: 99999;">
+  <view style="height: {{customBar}}px;">
+    <view style="height:{{statusBarHeight}}px;width: 100%;"></view>
+    <view style="height: {{customBar-statusBarHeight}}px;" class="flex align-center aaa">
+      <view wx:if="{{share2=='share'}}" bindtap="home" data-id="{{info.id}}">
+        <image hidden="{{find == 'index'}}" src="{{type!=2?'../../images/vector10@2x.png':'../../images/backTwo.png'}}" class="backBtn"></image>
+      </view>
+      <view wx:if="{{share2=='shareHome'}}" style="opacity: 0;">
+        <image hidden="{{find == 'index'}}" src="{{type!=2?'../../images/vector10@2x.png':'../../images/backTwo.png'}}" class="backBtn"></image>
+      </view>
+      <view wx:else>
+        <image hidden="{{find == 'index'}}" src="{{type!=2?'../../images/vector10@2x.png':'../../images/backTwo.png'}}" class="backBtn" bindtap="back" wx:if="{{isBack}}"></image>
+      </view>
+      <view style="width: 100vw;" wx:if="{{type==1}}">
+        <view class="flex align-center top_me fs24" style="{{find == 'index'?'':'transform: translateX(-70rpx);'}}">
+
+          <view class="newBtn {{find == 'index' && find != 'share'?'active':''}}" bindtap="find" data-type="send">发现
+          </view>
+          <view class="newBtn {{find != 'index' && find != 'share' ?'active':''}}" bindtap="find" data-type="me">我的
+          </view>
+        </view>
+      </view>
+      <!-- 用户的信息展示栏 type控制 -->
+      <view wx:elif="{{type==2}}" class="userNav flex align-center" bindtap="home" data-id="{{info.id}}">
+        <image mode="aspectFill" src="{{info.head?info.head:'../../images/Ellipse 372@2x.png'}}"></image>
+        <view style="font-size: 24rpx;">{{info.user}}</view>
+        <block wx:if="{{info.id!=uid1}}">
+          <view data-uid="{{info.id}}" catchtap="setCare" hidden="{{is_follow}}" class="userMsg2 careBtn">关注</view>
+          <view data-uid="{{info.id}}" catchtap="setCare" hidden="{{!is_follow}}" class="userMsg2 careBtn noCareBtn">已关注</view>
+        </block>
+      </view>
+      <view wx:elif="{{type==3}}"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/find/find.wxml-->
+<import src="find.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" data="{{customBar,statusBarHeight}}" />
+<view style="padding: 0 0 14rpx ;">
+  <view class="topOne">
+    <view class="bcOne flex align-center">
+  <Top  class="bcOne2" find="index" bg_color="none" isBack="{{!share?true:false}}" type="1"></Top>
+</view>
+    <view style="padding:16rpx 24rpx 0">
+      <view class="searchBtn" bindtap="goSearch"><image src="../../images/logo.png"></image>目的地/景点/关键词</view>
+      <scroll-view scroll-x="true">
+        <view class="scrollBox">
+          <!-- <block wx:for="{{navs}}"  wx:key="index">
+            <view class="typeItem {{type==item.type?'active':''}}" bindtap="tabChange" data-type="{{item.type}}">
+              {{item.name}}
+            </view>
+          </block> -->
+          <view class="typeItem {{type=='tj'?'active':''}}" bindtap="tabChange" data-type="tj">
+            推荐
+            </view>
+          <block wx:for="{{typeList}}" wx:key="index">
+            <view class="typeItem {{type==item.id?'active':''}}" bindtap="tabChange" data-type="{{item.id}}">{{item.category_name}}</view>
+          </block>
+          <view class="typeItem {{type=='lx'?'active':''}}" bindtap="tabChange" data-type="lx">
+            同城老乡
+            </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <Work data="{{work}}" />
+  <view style="margin-top: 200rpx;" class="flex align-center justify-center" wx:if="{{worktype}}">
+    <noData img="../../images/rtdw.png" />
+  </view>
+</view>

@@ -1,0 +1,88 @@
+<!--pages/videoInfo/videoInfo.wxml-->
+<view class="relative" style="width: 100%;height: 100%;">
+ <Top bg_color="none" fixed="{{true}}" info="{{info}}" isBack="{{true}}" share = "{{share}}" share2="{{share2}}" />
+  <video src=" {{dynamics_info.video}}"  class="video" loop controls="{{false}}" catchtap="play" id="video" show-center-play-btn="{{false}}" autoplay></video>
+  <view class="flex justify-center align-center z_btn absolute" wx:if="{{isshow}}" catchtap="play" id="video" show-center-play-btn="{{false}}" data-index="{{index}}">
+    <image src="../../images/videoInfoPlay.png"></image>
+  </view>
+  <view class="flex justify-center align-center z_btn absolute" wx:if="{{isshow}}" catchtap="play" id="video" show-center-play-btn="{{false}}" data-index="{{index}}">
+    <image src="../../images/Polygon 5@2x.png"></image>
+  </view>
+  <view class="userMsg  absolute">
+    <view>
+      <view class="flex ">
+        <view bindtap="home" data-id="{{info.id}}">
+          <image src="{{info.head||'../../images/Ellipse 372@2x.png'}}"></image>
+        </view>
+        <view bindtap="home" data-id="{{info.id}}" class="userMsg2 fs36">{{info.user}}</view>
+        <block wx:if="{{uid!=uid1}}">
+          <view bindtap="setCare" hidden="{{is_follow}}" class="userMsg2 careBtn">关注</view>
+          <view bindtap="setCare" hidden="{{!is_follow}}" class="userMsg2 careBtn noCareBtn">已关注</view>
+        </block>
+        <view wx:else class="userMsg2 "></view>
+      </view>
+      <view class="words {{showWordAll?'':'notWord'}}" id="words">{{dynamics_info.content}}</view>
+      <view bindtap="seeAll" class="seeAll" hidden="{{dynamics_info.content.length<57||showWordAll}}">
+        展开
+      </view>
+      <view bindtap="hideAll" class="seeAll hideAll" hidden="{{dynamics_info.content.length<57||!showWordAll}}">
+        收起
+      </view>
+    </view>
+  </view>
+  <view class="videoInfo_b  absolute">
+      <view class="flex space-between">
+        <view class="flex space-between line2 align-center">
+      <view bindtap="setZan"  class="flex align-center zs">
+        <image src="../../images/{{is_zan?'yidianzanl.png':'dianzan.png'}}"></image>
+        <view>{{zan}}</view>
+      </view>
+      <view bindtap="dynamic"  class="flex align-center zs">
+        <image src="../../images/comment.png"></image>
+        <view>{{countNum}}</view>
+      </view>
+      <!-- <view bindtap="setZan"  hidden="{{!is_zan}}" class="flex align-center">
+        <image src="../../images/yidianzanl.png"></image> 
+        <view>{{zan}}</view>
+      </view> -->
+      <view bindtap="setStar"  class="flex align-center zs">
+        <image src="../../images/{{is_collection?'yishoucang.png':'shouchang.png'}}"></image>
+        <view>{{star}}</view>
+      </view>
+      <!-- <view bindtap="setStar" hidden="{{!is_collection}}" class="flex align-center">
+        <image src="../../images/yishoucang.png"></image> 
+        <view>{{star}}</view>
+      </view> -->
+      <view class="relative">
+        <!-- <view class="flex align-center zs"> -->
+        <image src="../../images/zhuanfa.png"></image>
+        <!-- <view>{{dynamics_info.share}}</view> -->
+      <!-- </view> -->
+        <button open-type="share" size="mini" class="absolute shareBtn"></button>
+      </view>
+  
+    </view> 
+    <view hidden="{{typedel != 'typedel'||uid1 != info.id || share == 'share'}}">
+      <view bindtap="delItem"  class="flex align-center zs delItem">
+        <image src="../../images/delItem2.png"></image>
+      </view>
+    </view>
+      </view> 
+  </view>
+</view>
+<view wx:if="{{showWordAll}}" class="shaowdow {{showWordAll?'bbb':''}}" bindtap="hideAll">
+</view>
+<view class="bottom-tc {{showBtc?'active-tc':''}}">
+     <view class="titleOne">
+       <view>共{{countNum}}条评论</view>
+       <view class="clearClose" bindtap="closeBottom"><image src="../../images/clearClose.png"></image></view>
+     </view>
+       <!-- 组件抽离部分 -->
+       <view wx:if="{{comment.length}}" class="comentBoxs">
+        <Comment dynamicsid = "{{dynamic_id}}" comments = "{{comment}}"  />
+       </view>
+       <view class="inputLine flex space-between">
+        <input bindinput="contentInput" bindconfirm="contentConfirm" value="{{contentWords}}" placeholder="发表神评妙论~" type="text"/>
+        <view class="sendBtn" bindtap="contentConfirm">发送</view>
+    </view>
+</view>

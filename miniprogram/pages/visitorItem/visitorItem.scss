@@ -1,0 +1,40 @@
+/* pages/visitorItem.wxss */
+.visitorItem{
+  padding: 24rpx 24rpx 0;
+  background-color: #fff;
+}
+.border_b{
+  padding-bottom: 24rpx;
+  border-bottom: 2rpx solid #F4F4F4 ;
+  overflow: hidden;
+}
+
+.image_l image{
+  width: 112rpx;
+  height: 108rpx;
+  border-radius: 56rpx;
+}
+.word_r{
+  margin:0 24rpx;
+  flex:1
+}
+.userName{
+  text{
+    color: #E75353;
+  }
+}
+.date1{
+  margin-top: 8rpx;
+  color: #cfcfcf;
+  font-size: 20rpx;
+}
+.guanzhu,.active_g_z{
+  width: 104rpx;
+  height: 40rpx;
+  border-radius: 24rpx;
+  border: 2rpx solid var(--theme);
+  line-height: 40rpx;
+}
+.active_g_z {
+  background: var(--theme);
+}

@@ -1,0 +1,113 @@
+{
+  "projectname": "%E8%B6%A3%E7%A5%9E%E6%B8%B8",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": true
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "发布动态",
+          "pathName": "pages/release/release",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "个人中心",
+          "pathName": "pages/me/me",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "发现",
+          "pathName": "pages/find/find",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分享主页",
+          "pathName": "pages/shareHome/shareHome",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "编辑资料",
+          "pathName": "pages/editMaterials/editMaterials",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "作品详情",
+          "pathName": "pages/workDetails/workDetails",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "访客列表",
+          "pathName": "pages/visitorList/visitorList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "视频详情",
+          "pathName": "pages/videoInfo/videoInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index/index",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "搜索",
+          "pathName": "pages/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分享作品后的逻辑",
+          "pathName": "pages/videoInfo/videoInfo",
+          "query": "share=share&id=1480",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/myCard/myCard",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shareHome/shareHome",
+          "query": "id=3",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/editMaterials/editMaterials",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "2.26.0"
+}

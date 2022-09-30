@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Top":"../top/top",
+    "CompanyInfo":"../companyInfo/companyInfo",
+    "Fan":"../fan/fan",
+    "Work":"../work/work",
+    "noData":"../noData/noData"
+  },
+  "navigationStyle":"custom"
+}

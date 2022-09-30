@@ -1,0 +1,37 @@
+<!--pages/introduction/introduction.wxml-->
+
+  <view class="content_b">
+      <view class="fs28 font-bold home_title">个人简介</view>
+      <view class="flex flex-start desc">
+        <view class="fs28 ">认证</view>
+        <view class="label text-center flex white">
+          <block wx:for="{{info.attestation}}" wx:key="index">
+            <view class="fs20">{{item}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="flex flex-start desc">
+        <view class="fs28 ">兼任</view>
+        <view class="label1 text-center">
+          <block wx:for="{{info.part_time}}" wx:key="index">
+            <view class="fs28 theme3">{{item}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="flex flex-start desc">
+        <view class="fs28 ">荣誉</view>
+        <view class="label1 text-center">
+          <block wx:for="{{info.honor}}" wx:key="index">
+            <view class="fs28 theme3">{{item}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="flex flex-start desc">
+        <view class="fs28 ">行业</view>
+        <view class="label1 text-center">
+          <block wx:for="{{info.business}}" wx:key="index">
+            <view class="fs28 theme3">{{item}}</view>
+          </block>
+        </view>
+      </view>
+    </view>

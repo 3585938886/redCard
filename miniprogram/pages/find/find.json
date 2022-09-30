@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Top":"../top/top",
+    "Work":"../work/work",
+    "noData":"../noData/noData"
+  },
+  "navigationStyle":"custom"
+}

@@ -1,0 +1,23 @@
+<!--pages/editMaterials/editMaterials.wxml-->
+<view class="friendsList" style="width: 100vw;overflow:hidden">
+  <view class="fList" wx:for="{{allList}}" wx:key="id" bindtap="toOther" data-id="{{item.id}}">
+    <view class="images">
+      <image src="{{item.head}}"></image>
+    </view>
+    <view class="main">
+      <view class="text">
+        <view class="name">
+          {{item.name}}
+        </view>
+        <view class="message">
+          {{item.introduction}}
+        </view>
+      </view>
+      <view class="focus" catchtap="focus" data-id="{{item.id}}" wx:if="{{item.is_follow}}">已关注</view>
+      <view class="nofocus" catchtap="nofocus" data-id="{{item.id}}" wx:else>关注</view>
+    </view>
+  </view>
+  <view style="height: calc(100vh - 200rpx);margin-top: 200rpx;"  wx:if="{{allList.length ==0}}">
+    <noData />
+  </view>
+</view>

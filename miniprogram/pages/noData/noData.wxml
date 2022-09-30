@@ -1,0 +1,5 @@
+<!--pages/noData/noData.wxml-->
+<view class="text-center">
+  <image src="{{img?img:'../../images/gea.png'}}" class="nod_img"></image>
+  <view class="fs28 theme3">{{desc?gea.png:'暂时还没有内容哦~'}}</view>
+</view>

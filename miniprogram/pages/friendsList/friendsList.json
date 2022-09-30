@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "noData":"../noData/noData"
+  },
+  "navigationBarTitleText": ""
+}

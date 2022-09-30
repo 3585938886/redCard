@@ -1,0 +1,79 @@
+<!--pages/work/work.wxml-->
+<view class="zp flex flex-wrap space-between relative">
+  <block wx:for="{{works}}" wx:key="index" >
+    <view class="zp_c bg_white Box" bindtap="work" bindtouchstart="touchstart" bindtouchend="touchend" bindlongtap="longtaps" data-from="{{item.from}}" data-index="{{index}}" data-uid="{{item.uid}}" data-type="{{item.type}}" data-id="{{item.dynamic_id||item.id}}">
+      <view class="isTop" wx:if="{{item.is_top===2}}">置 顶</view>
+      <view class="relative">
+        <image src="{{item.video_img}}" class="zp_img" mode="aspectFill"> </image>
+        <image src="../../images/wwer.png" class="absolute v_btn" wx:if="{{item.type==2}}"></image>
+      </view>
+      <view class="bg_white" style="padding: 16rpx 14rpx;">
+        <view class="fs28 nowrap" style="font-weight: 700;">{{item.title}}</view>
+        <view class="flex align-center fs20 zp_text">
+          <image src="{{item.get_author_info.head}}" class="zp_ar"></image>
+          <view style="color: #8d8d8d;font-size: 24rpx;">{{item.get_author_info.name}}</view>
+          <image src="../../images/eeeza.png" class="zp_zan"></image>
+          <view>{{item.zan}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 底部弹框 -->
+  <!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="allChoose">
+      <view class="choose" bindtap="delete">
+        <view class="image">
+          <image src="../../images/fy3.png"></image>
+        </view>
+        <view class="text">
+          删 除
+        </view>
+      </view>
+      <view class="choose" bindtap="toTop">
+        <view class="image">
+          <image src="../../images/fy4.png"></image>
+        </view>
+        <view class="text">
+          置 顶
+        </view>
+      </view>
+      <view class="choose" bindtap="noTOP">
+        <view class="image">
+          <image src="../../images/fy5.png"></image>
+        </view>
+        <view class="text">
+          取消置顶
+        </view>
+      </view>
+      <view class="choose relative" bindtap="share">
+        <view class="image">
+          <image src="../../images/fy6.png"></image>
+        </view>
+        <view class="text">
+          分 享
+        </view>
+        <button open-type="share" class="absolute choose" style="top: 0;z-index: 1;opacity: 0;"></button>
+      </view>
+      <!-- <view class="choose" wx:for="{{chooseList}}" wx:key="id">
+        <view class="image">
+          <image :src="item.icon"></image>
+        </view>
+        <view class="text">
+          {{item.text}}
+        </view>
+      </view> -->
+
+    </view>
+    <view class="closePw" bindtap="closePw">
+      <image src="../../images/fy7.png" alt="" srcset="" />
+    </view>
+
+    <view class="bottomLine"></view>
+
+
+  </view>
+</view>

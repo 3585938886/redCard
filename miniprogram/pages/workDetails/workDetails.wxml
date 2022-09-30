@@ -1,0 +1,67 @@
+<!--pages/workDetails/workDetails.wxml-->
+<import src="workDetails.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" data="{{customBar,statusBarHeight}}" />
+<view class="topOne" wx:if="{{info.head}}">
+  <Top class="top" info="{{info}}" type="2" bg_color="white" isBack="{{!share?true:false}}" share2="{{share2}}"></Top>
+  <view class="headpic">
+    <swiper  indicator-dots indicator-active-color="rgba(244, 91, 91, 1)" indicator-color="rgba(221, 221, 221, 1)" class="headpic">
+      <swiper-item wx:for="{{dynamics_info.imgs}}" wx:key="index">
+        <image bindtap="previewImage" data-index="{{index}}" mode="aspectFill" src="{{item}}">
+        </image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="detailMsg">
+    <view class="title">
+      {{dynamics_info.title}}
+    </view>
+    <view class="word">{{dynamics_info.content}}</view>
+    <view class="bottom">
+      <view class="flex space-between">
+        <view class="date">{{dynamics_info.create_time}}</view>
+        <view class="btns flex space-between {{typedel != 'typedel'?'btns2':''}}">
+          <view bindtap="setZan" hidden="{{is_zan}}">
+            <image src="../../images/group390@2x.png"></image> <text>{{zan}}</text>
+          </view>
+          <view bindtap="setZan" hidden="{{!is_zan}}">
+            <image src="../../images/yidianzanl.png"></image>
+            <view class="textOne">{{zan}}</view>
+          </view>
+          <view bindtap="setStar" hidden="{{is_collection}}">
+            <image src="../../images/shoucang.png"></image>
+            <view class="textOne">{{star}}</view>
+          </view>
+          <view bindtap="setStar" hidden="{{!is_collection}}">
+            <image src="../../images/yishoucang.png"></image>
+            <view class="textOne">{{star}}</view>
+          </view>
+          <view class="relative">
+            <image src="../../images/share.png"></image>
+            <button open-type="share" size="mini" class="absolute shareBtn"></button>
+          </view>
+          <view hidden="{{typedel != 'typedel'|| userInfo.id != info.id || share == 'share'}}" bindtap="delItem">
+            <image src="../../images/delItem.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="line-block">
+  </view>
+  <view class="detailMsg" wx:if="{{dynamics_info}}">
+    <view class="comments">
+      <view class="comments_title">评论（{{countNum}}条）</view>
+      <view class="comments_line flex space-between">
+        <view class="comments_image">
+          <image src="{{userInfo.head}}"></image>
+        </view>
+        <view class="comments_input">
+          <input confirm-type="send" bindinput="contentInput" bindconfirm="contentConfirm" value="{{contentWords}}" always-embed adjust-position type="text" placeholder="发表神评妙论~" />
+        </view>
+      </view>
+      <!-- 组件抽离部分 -->
+      <Comment id="comment" dynamicsid="{{dynamic_id}}" comments="{{comment}}" uid="{{info.id}}" />
+    </view>
+  </view>
+</view>

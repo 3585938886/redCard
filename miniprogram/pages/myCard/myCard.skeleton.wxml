@@ -1,0 +1,87 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/9/29下午5:53:20
+使用方法：
+在 E:\pj交接\趣神游\one\miniprogram\pages\myCard\myCard.wxml 引入模板
+
+```
+<import src="myCard.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\pj交接\趣神游\one\miniprogram\pages\myCard\myCard.wxss 中引入样式
+```
+@import "./myCard.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="pages/music/music">
+      <view class="absolute music--absolute music_c music--music_c" style="top: 94px;">
+        <image class="music music--music sk-image" style=";transition:1000ms linear 0ms;transform:rotate(900deg);transition-property:transform;transform-origin:50% 50% 0;-webkit-transition:1000ms linear 0ms;-webkit-transform:rotate(900deg);-webkit-transition-property:transform;-webkit-transform-origin:50% 50% 0"></image>
+      </view>
+    </view>
+    <view>
+      <image class="bg sk-image" mode="aspectFill"></image>
+      <view class="relative cont">
+        <view class="bg_white br pc">
+          <view class="flex align-center">
+            <view class="relative avatar_c">
+              <image class="avatar sk-image"></image>
+              <image class="sex absolute sk-image"></image>
+            </view>
+            <view class="company_r">
+              <view class="flex align-center">
+                <view class="fs36 font-bold name sk-transparent sk-text-14-2857-829 sk-text">游客0362856</view>
+                <view class="fs28 sk-transparent sk-text-14-2857-54 sk-text">合肥</view>
+              </view>
+              <view class="flex align-center" style="margin-top: 5px;">
+                <view class="fs28 company theme5 sk-transparent sk-text-14-2857-803 sk-text">周老师的肥东产业</view>
+                <image class="trv sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="flex align-center justify-center" style="margin:10px 0">
+            <view class="flex align-center koubei empty_demo"></view>
+            <view class="fs20 city sk-transparent sk-text-25-0000-524 sk-text" data-thisid="1" data-title="呼和浩特市">内蒙古自治区呼和浩特市</view>
+          </view>
+          <view class="flex align-center space-around" style="padding: 10px 0;">
+            <view class="fs_num text-center" data-type="fans">
+              <view class="fs40 font-bold sk-transparent sk-text-14-2857-274 sk-text" style="background-position-x: 50%;">1</view>
+              <view class="fs20 sk-transparent sk-text-14-2857-317 sk-text" style="background-position-x: 50%;">粉丝</view>
+            </view>
+            <view class="fs_num text-center">
+              <view class="fs40 font-bold sk-transparent sk-text-14-2857-598 sk-text" style="background-position-x: 50%;">0</view>
+              <view class="fs20 sk-transparent sk-text-14-2857-123 sk-text" style="background-position-x: 50%;">点赞</view>
+            </view>
+            <view class="fs_num text-center">
+              <view class="fs40 font-bold sk-transparent sk-text-14-2857-396 sk-text" style="background-position-x: 50%;">2</view>
+              <view class="fs20 sk-transparent sk-text-14-2857-822 sk-text" style="background-position-x: 50%;">收藏</view>
+            </view>
+            <view class="fs_num text-center" data-type="visitor">
+              <view class="fs40 font-bold sk-transparent sk-text-14-2857-142 sk-text" style="background-position-x: 50%;">11</view>
+              <view class="fs20 sk-transparent sk-text-14-2857-936 sk-text" style="background-position-x: 50%;">访客</view>
+            </view>
+          </view>
+        </view>
+        <view class="bg_white br pc fs32 jiyu_c">
+          <view style="margin-bottom: 2px;" class="sk-transparent sk-text-14-2857-179 sk-text">您好：</view>
+          <view class="jiyu sk-transparent sk-text-18-0000-926 sk-text">金额合计的空间空间的空间扩大进口看得见看得见的空间华为海思我i五i我i威威i为大家都觉得的课件课件的</view>
+          <view class="flex align-center justify-end" style="margin-top: 20px;">
+            <image class="as sk-image"></image>
+            <view class="fs28 sk-transparent sk-text-14-2857-63 sk-text" style="margin:0 5px">游客0362856</view>
+            <image class="mess sk-image"></image>
+          </view>
+        </view>
+        <view class="bg_white br fs32 jiyu_c jieshao sk-image" style="background: url(&quot;https://zy-znmp.oss-cn-shanghai.aliyuncs.com/qushenyo/362856_1664434418497_0K1ZE2KFaquH6374f0bc631ad3b3d7a2c2db414b2b7e.png&quot;) no-repeat;background-size: 100%;height: 258px;width: 323px">
+          <view style="padding:21px 16px;">
+            <view class="fs36 font-bold text-center sk-transparent sk-text-14-2857-706 sk-text" style="background-position-x: 50%;">业务介绍</view>
+            <view class="fs32 sk-transparent sk-text-18-0000-904 sk-text" style="color: #444444;line-height: 25px;margin-top: 15px;">安徽华格科技有限公司设立于2016 年10月,是一家互联网科技创新及运营企 业，先后在全国投资参股数十家优秀的创 业型科技公司。华格科技致力于以共享经 济实践响应中国互联网创新战略，与不同 行业伙伴协作互补，达成资源共享互利共 赢的局面。</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

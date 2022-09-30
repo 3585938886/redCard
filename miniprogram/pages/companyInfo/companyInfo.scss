@@ -1,0 +1,41 @@
+/* pages/companyInfo/companyInfo.wxss */
+.name_r{
+  margin-left: 22rpx;
+}
+.guanzhu{
+  width: 104rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border: 2rpx solid var(--theme);
+  border-radius: 24rpx;
+  display: inline-block;
+}
+.avatar{
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+}
+.sex{
+  width: 32rpx;
+  height: 32rpx;
+  bottom: 0;
+  right: 20rpx;
+  z-index: 1;
+}
+
+.jieshao{
+  margin-bottom: 12rpx;
+}
+.jieshao text:nth-child(1)::after{
+   content: '';
+   width: 2rpx;
+   height: 28rpx;
+   background: white;
+   display: inline-block;
+   position: relative;
+   right: -14rpx;
+   top: 4rpx;
+}
+.jieshao text:nth-child(2){
+  padding: 0 26rpx 0 30rpx;
+}

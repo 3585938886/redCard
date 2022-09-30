@@ -1,0 +1,30 @@
+<!--pages/fan/fan.wxml-->
+<view class="flex space-between">
+  <view class="flex text-center" style="margin: 24rpx 0 28rpx 0;">
+    <view wx:if="{{type == 1}}" class="f_s" bindtap="goFanList">
+      <view class="fs28 font-bold">{{info.fans?info.fans:0}}</view>
+      <view class="fs24">粉丝</view>
+    </view>
+    <view wx:else class="f_s">
+      <view class="fs28 font-bold">{{info.fans?info.fans:0}}</view>
+      <view class="fs24">粉丝</view>
+    </view>
+    <view class="f_s">
+      <view class="fs28 font-bold">{{info.zan?info.zan:0}}</view>
+      <view class="fs24">点赞</view>
+    </view>
+    <view class="f_s">
+      <view class="fs28 font-bold">{{info.star?info.star:0}}</view>
+      <view class="fs24">收藏</view>
+    </view>
+    <view wx:if="{{type == 1}}" class="f_s" bindtap="goVisitor">
+      <view class="fs28 font-bold">{{info.visitor?info.visitor:0}}</view>
+      <view class="fs24">访客</view>
+    </view>
+    <view wx:else class="f_s">
+      <view class="fs28 font-bold">{{info.visitor?info.visitor:0}}</view>
+      <view class="fs24">访客</view>
+    </view>
+  </view>
+  <slot></slot>
+</view>

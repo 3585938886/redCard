@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Work":"../work/work",
+    "noData":"../noData/noData"
+  },
+  "navigationBarTitleText": "搜索"
+}

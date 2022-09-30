@@ -1,0 +1,79 @@
+<view class="relative">
+  <!-- <Top bg_color="none"></Top> -->
+  <Music bgm_music="{{info.bgm_music}}" wx:if="{{info}}" />
+  <view class="relative">
+    <image src="{{info.bgm}}" class="home_bg"></image>
+    <view style="display: {{info?'block':'none'}};">
+      <view class="absolute home_cont white">
+        <CompanyInfo isganzhu="{{true}}" data="{{info}}" />
+        <Fan data="{{info}}" />
+        <view class="flex align-center opts">
+          <image src="../../images/group367@2x.png"></image>
+          <view class="fs28">{{info.phone}}</view>
+        </view>
+        <view class="flex align-center opts">
+          <image src="../../images/group370@2x.png"></image>
+          <view class="fs28">{{info.address}}</view>
+        </view>
+      </view>
+      <view class="share absolute">
+        <view class="relative">
+          <image src="../../images/group428@2x.png"></image>
+          <button open-type="share" class="absolute"></button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="home_content">
+    <view class="content_b">
+      <view class="fs28 font-bold home_title">公司简介</view>
+      <view class="fs24 theme1">{{info.introduction}}</view>
+    </view>
+    <Introduction data="{{info}}" />
+    <view class="content_b">
+      <view class="fs28 font-bold home_title">我的动态</view>
+      <view class="text-center">
+        <view>
+          <!-- <image src="../../images/rectangle1549@2x.png" class="im1"></image> -->
+        </view>
+        <view class="flex">
+          <!-- <image src="../../images/rectangle1550@2x.png" class="im2"></image> -->
+          <image src="https://zy-znmp.oss-cn-shanghai.aliyuncs.com/public/rectangle1551%402x.png" class="im2"></image>
+        </view>
+      </view>
+      <view class="fs24 theme3 dy_text">
+        示例内容示例内容示例内容示例内容示例内容示例内容示例内容 示例内容示例内容示例内容示例内容示例内容示例内容示例内容示 例内容示例内容
+      </view>
+      <view>
+        <!-- <image src="../../images/rectangle1552@2x.png" class="im3"></image> -->
+      </view>
+    </view>
+    <view class="content_b">
+      <view class="fs28 font-bold home_title">图文集</view>
+      <!-- <image src="../../images/rectangle1552@2x.png" class="im3"></image> -->
+    </view>
+  </view>
+  <view class="fixed my">
+    <view class="flex fs24 text-center align-center white my_c">
+      <view class="active theme1">我的</view>
+      <view bindtap="work" style="height: 62rpx;line-height: 62rpx;">作品</view>
+    </view>
+  </view>
+
+  <!-- <view class="me_body absolute bg_white">
+    <view style="padding:16rpx 0 40rpx 0;" class="bg_white">
+      <view class="flex navs fs32 theme2 space-around">
+        <block wx:for="{{navs}}" wx:key="index">
+          <view class="{{index == currentNav?'theme1':''}}" bindtap="nav" data-index="{{index}}" data-id="{{info.id}}">{{item.name}}</view>
+        </block>
+      </view>
+      <view class="bt flex justify-center" style="transform: translateX(calc(100% * {{currentNav}}));transition: all .3s ease-in;">
+        <view></view>
+      </view>
+    </view>
+    <Work data="{{dynamics_list}}" />
+    <view style="margin-top: 100rpx;" wx:if="{{dynamics_type}}">
+      <noData img="../../images/gea.png" />
+    </view>
+  </view> -->
+</view>

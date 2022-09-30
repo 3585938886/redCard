@@ -1,0 +1,94 @@
+<!--pages/shareHome/shareHome.wxml-->
+<import src="shareHome.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" data="{{customBar,statusBarHeight}}" />
+<view class="" style="width: 100vw;height: 100vh;" wx:if="{{info}}">
+  <view class="me_bg white" style="background: url('{{info.bgm}}') no-repeat;background-size: cover;">
+    <Top class="topOne" bg_color="none" find="share" share2="shareHome" isBack="{{!share?true:false}}" type="1"></Top>
+    <view class="pd">
+      <CompanyInfo ganzhu="{{false}}" data="{{info}}" wx:if="{{info}}">
+        <view class="tocard" bindtap="toCard" style="background: {{id== userId?'#E96161':'#0D99FF'}};">{{id== userId?'我':'TA'}}的名片</view>
+        <view class="relative share_img">
+          <image src="../../images/group379@2x.png"></image>
+          <button open-type="share" class="absolute"></button>
+        </view>
+      </CompanyInfo>
+      <view class="theLabel">
+        <view class="koubei empty_demo" wx:if="{{info.opinions}}">
+          <view class="text">口碑</view>
+          <view class="num">{{info.opinions}}
+            <span wx:if="{{info.opinions<60}}">低</span>
+            <span wx:if="{{info.opinions>=60&&info.opinions<80}}">中</span>
+            <span wx:if="{{info.opinions>=80}}">高</span>
+          </view>
+        </view>
+        <view class="labels" wx:if="{{info.province || info.industry || info.university}}">
+          <view class="label nowrap" wx:if="{{info.province}}||{{info.city}}">
+            {{
+            info.province
+            }}
+            {{
+            info.city
+            }}</view>
+          <view class="label nowrap" wx:if="{{info.industry}}">
+            {{
+            info.industry
+            }}</view>
+          <view class="label nowrap" wx:if="{{info.university}}">
+            {{
+            info.university
+            }}</view>
+        </view>
+      </view>
+      <view class="fs24" style="margin: 24rpx 0 0rpx 0;height: 96rpx;overflow: scroll;width: 640rpx;">
+        {{info.introduction?info.introduction:''}}
+      </view>
+      <Fan hidden="{{info.id == userId }}" data="{{info}}">
+        <view class="flex align-center ">
+          <view class="gan_z {{info.is_follow?'gan_y':''}} white text-center fs32" bindtap="follow">{{info.is_follow?'已关注':'关注'}}</view>
+          <image src="../../images/group381@2x.png" class="message" bindtap="closePopup"></image>
+        </view>
+      </Fan>
+    </view>
+  </view>
+  <view class="me_body absolute">
+    <view style="height: 100rpx;" class="bg_white">
+      <view style="transform: translateY(12rpx);" class="bg_white brs">
+        <view class="flex navs fs32 theme4 space-around">
+          <block wx:for="{{navs}}" wx:key="index">
+            <view class="theme1 {{index == currentNav?'theme1':''}}">{{item.name}} <text hidden="{{!item.nums}}">({{item.nums}})</text></view>
+          </block>
+        </view>
+        <view class="bt flex justify-center empty_demo" style="transform: translateX(calc(100% * {{currentNav}}));transition: all .3s ease-in;">
+          <view></view>
+        </view>
+      </view>
+    </view>
+    <scroll-view style="height: calc(100vh - 752rpx);" scroll-y bindscrolltolower="scrolltolower">
+      <Work data="{{dynamics_list}}" />
+      <view style="margin-top: 100rpx;" wx:if="{{dynamics_type}}">
+        <noData img="../../images/gea.png" />
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+
+<view class="popup flex flex-end" wx:if="{{isShowPopup}}" bindtap="closePopup">
+  <view class="popup_body relative" catchtap="true">
+    <view class="title_b">个人信息</view>
+    <view class="line2 fs32">
+      <view>
+        <image mode="aspectFit" src="../../images/dfsa@2x.png"></image>{{info.phone}}
+      </view>
+      <view>
+        <image mode="aspectFit" src="../../images/wechart.png"></image>{{info.wechat}}
+      </view>
+      <view>
+        <image mode="aspectFit" src="../../images/kjvkd@2x.png"></image>{{info.city}}
+      </view>
+    </view>
+    <view class="close" catchtap="closePopup">
+      <image src="../../images/rectangle325@2x.png"></image>
+    </view>
+  </view>
+</view>

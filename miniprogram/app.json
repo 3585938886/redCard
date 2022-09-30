@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/find/find",
+    "pages/index/index",
+    "pages/release/release",
+    "pages/me/me",
+    "pages/shareHome/shareHome",
+    "pages/editMaterials/editMaterials",
+    "pages/workDetails/workDetails",
+    "pages/visitorList/visitorList",
+    "pages/videoInfo/videoInfo",
+    "pages/search/search",
+    "pages/fanList/fanList",
+    "pages/myCard/myCard",
+    "pages/partTime/partTime",
+    "pages/honor/honor",
+    "pages/friendsList/friendsList"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

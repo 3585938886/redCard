@@ -1,0 +1,153 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/9/28下午2:45:13
+使用方法：
+在 E:\pj交接\趣神游\one\miniprogram\pages\shareHome\shareHome.wxml 引入模板
+
+```
+<import src="shareHome.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\pj交接\趣神游\one\miniprogram\pages\shareHome\shareHome.wxss 中引入样式
+```
+@import "./shareHome.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view style="width: 100vw;height: 100vh;">
+      <view class="me_bg white sk-image" style="background: url('http://zy-znmp.oss-cn-shanghai.aliyuncs.com/2022-07-26_1658829217_62dfb9a11d8e5.png') no-repeat;background-size: cover;">
+        <view is="pages/top/top" class="topOne">
+          <view class="relative top--relative" style="height: 84px;background: none;top: 0;left: 0;width: 100%;z-index: 99999;">
+            <view style="height: 84px;">
+              <view style="height:44px;width: 100%;"></view>
+              <view class="flex top--flex align-center top--align-center aaa top--aaa" style="height: 40px;">
+                <view>
+                  <image class="backBtn top--backBtn sk-image"></image>
+                </view>
+                <view style="width: 100vw;">
+                  <view class="flex top--flex align-center top--align-center top_me top--top_me fs24 top--fs24" style="transform: translateX(-35px);">
+                    <view class="newBtn top--newBtn sk-transparent sk-text-25-0000-457 sk-text" data-type="send" style="background-position-x: 50%;">发现
+                    </view>
+                    <view class="newBtn top--newBtn sk-transparent sk-text-25-0000-354 sk-text" data-type="me" style="background-position-x: 50%;">我的
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="pd">
+          <view is="pages/companyInfo/companyInfo">
+            <view class="flex companyInfo--flex space-between companyInfo--space-between">
+              <view class="flex companyInfo--flex align-center companyInfo--align-center">
+                <view class="relative companyInfo--relative">
+                  <image class="avatar companyInfo--avatar sk-image" mode="aspectFill"></image>
+                  <image class="sex companyInfo--sex absolute companyInfo--absolute sk-image"></image>
+                </view>
+                <view class="name_r companyInfo--name_r">
+                  <view class="jieshao companyInfo--jieshao">
+                    <text class="fs36 companyInfo--fs36 sk-transparent sk-text-14-2857-457 sk-text sk-pseudo sk-pseudo-circle">9月不贴膘</text>
+                    <text class="fs28 companyInfo--fs28"></text>
+                  </view>
+                  <view class="fs24 companyInfo--fs24"></view>
+                </view>
+              </view>
+              <view class="relative share_img">
+                <image class="sk-image"></image>
+                <button class="absolute sk-button sk-pseudo sk-pseudo-circle" open-type="share"></button>
+              </view>
+            </view>
+          </view>
+          <view class="fs24 sk-transparent" style="margin: 20px 0 12px 0;height: 51px;overflow: scroll;"></view>
+          <view is="pages/fan/fan">
+            <view class="flex fan--flex space-between fan--space-between">
+              <view class="flex fan--flex text-center fan--text-center" style="margin: 12px 0 14px 0;">
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-320 sk-text" style="background-position-x: 50%;">2</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-977 sk-text" style="background-position-x: 50%;">粉丝</view>
+                </view>
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-762 sk-text" style="background-position-x: 50%;">41</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-554 sk-text" style="background-position-x: 50%;">点赞</view>
+                </view>
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-784 sk-text" style="background-position-x: 50%;">12</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-608 sk-text" style="background-position-x: 50%;">收藏</view>
+                </view>
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-208 sk-text" style="background-position-x: 50%;">450</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-42 sk-text" style="background-position-x: 50%;">访客</view>
+                </view>
+              </view>
+              <view class="flex align-center">
+                <view class="gan_z white text-center fs32 sk-transparent sk-text-23-3333-736 sk-text" style="background-position-x: 50%;">关注</view>
+                <image class="message sk-image"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="me_body absolute">
+        <view class="bg_white" style="height: 50px;">
+          <view class="bg_white brs" style="transform: translateY(6px);">
+            <view class="flex navs fs32 theme4 space-around">
+              <view class="theme1 sk-transparent">笔记
+                <text class="sk-transparent sk-text-14-2857-31 sk-text" style="background-position-x: 50%;">(36)</text>
+              </view>
+            </view>
+            <view class="bt flex justify-center empty_demo" style="transform: translateX(calc(100% * 1));transition: all .3s ease-in;"></view>
+          </view>
+        </view>
+        <scroll-view scroll-y="true" style="height: calc(100vh - 376px);">
+          <view is="pages/work/work">
+            <view class="zp work--zp flex work--flex flex-wrap work--flex-wrap space-between work--space-between relative work--relative">
+              <view class="zp_c work--zp_c bg_white work--bg_white" data-id="3673" data-index="0" data-type="1">
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+                <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+                  <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-919 sk-text" style="font-weight: 700;">沈阳方特一日游</view>
+                  <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                    <image class="zp_ar work--zp_ar sk-image"></image>
+                    <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-205 sk-text">9月不贴膘</view>
+                    <image class="zp_zan work--zp_zan sk-image"></image>
+                    <view class="sk-transparent sk-opacity">2</view>
+                  </view>
+                </view>
+              </view>
+              <view class="zp_c work--zp_c bg_white work--bg_white" data-id="3670" data-index="1" data-type="1">
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+                <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+                  <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-722 sk-text" style="font-weight: 700;">稻梦空间</view>
+                  <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                    <image class="zp_ar work--zp_ar sk-image"></image>
+                    <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-270 sk-text">9月不贴膘</view>
+                    <image class="zp_zan work--zp_zan sk-image"></image>
+                    <view class="sk-transparent sk-opacity">1</view>
+                  </view>
+                </view>
+              </view>
+              <view class="zp_c work--zp_c bg_white work--bg_white" data-id="2827" data-index="2" data-type="2">
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                  <image class="absolute work--absolute v_btn work--v_btn sk-image"></image>
+                </view>
+              </view>
+              <view class="zp_c work--zp_c bg_white work--bg_white" data-id="2826" data-index="3" data-type="1">
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

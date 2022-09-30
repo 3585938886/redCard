@@ -1,0 +1,157 @@
+/* pages/release/release.wxss */
+.to_img{
+   width: 190rpx;
+   height: 190rpx;
+  //  margin-right: 24rpx;
+   margin-bottom: 24rpx;
+   border-radius: 12rpx;
+}
+.add_img{
+  border-radius: 12px 12px 12px 12px;
+  border: 2rpx solid #EBEBEB;
+  margin-left: 24rpx;
+}
+.add_img image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.relese{
+  padding:0 24rpx 220rpx;
+}
+.release_top{
+  padding: 24rpx 0;
+  max-height: 760rpx;
+  overflow: auto;
+}
+input{
+  border-bottom: 2rpx solid #EFEFEF;
+}
+textarea{
+  width: 100%;
+}
+.address{
+  width: 28rpx;
+  height: 28rpx;
+}
+.add_sele{
+  width: 12rpx;
+  height: 24rpx;
+  transform: rotate(180deg);
+}
+.release_btn{
+  bottom: 40rpx;
+  left: 0;
+  width: calc(100% - 48rpx);
+  z-index: 999;
+  padding: 24rpx;
+}
+.release_btn view{
+  height: 92rpx;
+  line-height: 92rpx;
+  background: var(--theme);
+  border-radius: 46rpx;
+}
+.upLoadBtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 190rpx;
+  height: 190rpx;
+  background-color: #212121;
+  opacity: .8;
+  border-radius: 12rpx;
+  .addFm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -16rpx;
+    margin-top: -40rpx;
+    image{
+      width: 32rpx;
+      height: 32rpx;
+    }
+    >view{
+      position: absolute;
+      width: 100rpx;
+      left: -30rpx;
+      color: #ffffff;
+      font-size: 24rpx;
+    }
+  }
+
+}
+.relative{
+  position: relative;
+}
+.editLine{
+  font-size: 20rpx;
+  color: #4E4E4E ;
+  padding-bottom: 24rpx;
+  image{
+    width: 18rpx;
+    height: 18rpx;
+    margin-top: 4rpx;
+  }
+  view{
+      background-color: #F2F2F2 ;
+      padding: 2rpx 12rpx;
+  }
+  view:nth-child(2){
+      margin-left: 16rpx;
+  }
+}
+.imgUrl{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 12rpx;
+}
+
+.imgs{
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 12rpx;
+  margin-left: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.typeItem{
+  color:#373737  ;
+  font-size: 24rpx;
+  // float: left;
+  margin-left: 24rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  border: 2rpx solid #EFEFEF;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+}
+.typeItem:nth-child(1){
+  margin-left: 0;
+}
+.scrollBox{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  white-space: nowrap;
+
+}
+.active{
+  color: var(--theme);
+  font-weight: 700;
+  border-color: var(--theme);
+}
+.title2{
+  font-size: 28rpx;
+  font-weight: 700;
+  margin: 20rpx 0;
+}
+.delclose{
+  right: -12rpx;
+  top: -12rpx;
+  width: 32rpx;
+  height: 32rpx;
+}

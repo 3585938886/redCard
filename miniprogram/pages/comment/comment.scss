@@ -1,0 +1,120 @@
+/* pages/comment.wxss */
+.comments_line2{
+  margin: 30rpx 0 20rpx;
+}
+.comments_image image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+.comments_input input{
+  height: 58rpx;
+  width:594rpx;
+  border-radius: 8rpx;
+  color: #A0A0A0 ;
+  background-color: #EDEDED ;
+  font-size: 28rpx;
+  padding-left: 24rpx;
+}
+.comments_words{
+ width:618rpx;
+ font-size: 28rpx;
+}
+.comments_words2{
+  width: 540rpx;
+}
+.user{
+  font-size: 28rpx;
+  color: rgb(119, 113, 113);
+  // width: 160rpx;
+}
+.author{
+    margin-left: 20rpx;
+    padding: 4rpx 6rpx;
+    line-height: 28rpx;
+    text-align: center;
+    color: #797979 ;
+    background-color: #F0F0F0;
+    border-radius: 14rpx;
+}
+.lineH{
+    padding: 4rpx;
+    // line-height: 46rpx;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    width: 100%;
+    height: auto;
+}
+.date1{
+  // width: 180rpx;
+  font-size: 20rpx;
+  color: #D2D2D2 ;
+}
+.hfBtn{
+  padding-left: 40rpx;
+  color: #B95F5F;
+}
+.Izan{
+  font-size: 20rpx;
+}
+.Izan image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.zk{
+  color: #C31A1A;
+  font-size: 20rpx;
+  margin: 10rpx 0;
+}
+.zk image{
+  width: 16rpx;
+  height: 16rpx;
+  vertical-align: middle;
+}
+.hfBox{
+  font-size: 28rpx;
+ padding: 28rpx 0 20rpx;
+}
+.hfBox input{
+  padding: 12rpx;
+  background-color: #F0F0F0 ;
+  width: 590rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  color:#7E7E7E ;
+}
+.hfFbBtn{
+  color: #E84E4E;
+  line-height: 74rpx;
+  height: 74rpx;
+}
+.shaowdow{
+  position: fixed;
+  top: 0;left: 0;
+  opacity: .3;
+  z-index: 1000;
+  background-color: #2F2D2D ;
+}
+.bbb{
+  width: 100vw;
+  height: 100vh;
+  transition: all .5s;
+}
+.bottom-tc{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  height: 122rpx;
+  width: calc(100vw - 48rpx);
+  background-color: #fff;
+  // border-radius: 24rpx 24rpx 0 0;
+  transform: translateY(122rpx);
+  padding: 0 24rpx 64rpx;
+}
+.active-tc{
+  transform: translateY(0);
+  transition: all .5s;
+}

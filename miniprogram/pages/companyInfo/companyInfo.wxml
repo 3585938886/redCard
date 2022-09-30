@@ -1,0 +1,22 @@
+<!--pages/companyInfo/companyInfo.wxml-->
+<view class="flex space-between">
+  <view class="flex align-center">
+  <view class="relative">
+    <image src="{{info.head}}" class="avatar" mode="aspectFill" ></image>
+    <image src="../../images/svs.png" class="sex absolute" wx:if="{{info.sex==1}}"></image>
+    <image src="../../images/group306@2x(2).png" class="sex absolute" wx:elif="{{info.sex==2}}"></image>
+  </view>
+  <view class="name_r">
+    <view class="jieshao">
+      <text class="fs36">{{info.name}}</text>
+      <text class="fs28">{{info.job?info.job:''}}</text>
+      <text class="guanzhu fs24 text-center theme" wx:if="{{isganzhu}}">{{info.is_follow?'已关注':'关注'}}</text>
+    </view>
+    <view class="flex align-center">
+      <view class="fs24">{{info.company_name?info.company_name:''}}</view>
+      <image class="" src="/images/dfbdf.png" wx:if="{{info.is_authentication==1}}" style="width: 32rpx;height: 32rpx;margin-left: 20rpx;"></image>
+    </view>
+  </view>
+</view>
+<slot></slot>
+</view>

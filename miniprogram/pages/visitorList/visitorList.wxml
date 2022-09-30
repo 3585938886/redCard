@@ -1,0 +1,8 @@
+<!--pages/visitorList/visitorList.wxml-->
+<import src="../visitorItem/visitorItem"></import>
+<view class="pdTop">
+  <template is="card" data="{{type,visitorLists}}" ></template>
+  <view class="bottoms" style="height:100rpx" class="flex align-center justify-center" wx:if="{{worktype}}">
+    我也是有底线的~
+  </view>
+</view>

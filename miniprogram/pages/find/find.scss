@@ -1,0 +1,62 @@
+/* pages/find/find.wxss */
+@import "find.skeleton.wxss";
+page{
+  background: #F2F2F2;
+}
+.searchBtn{
+  height: 70rpx;
+  line-height: 70rpx;
+  // border: 2rpx solid #B5B5B5;
+  background-color: #F7F7F7 ;
+  border-radius: 35rpx;
+  padding-left: 24rpx;
+  font-size: 28rpx;
+  color: #9C9C9C;
+  width: 680rpx;
+  image{
+    width: 36rpx;
+    height: 36rpx;
+    vertical-align: middle;
+    margin-bottom: 6rpx;
+    margin-right: 20rpx;
+  }
+}
+.typeItem{
+  color: #A6A6A6 ;
+  font-size: 28rpx;
+  // float: left;
+  margin: 16rpx 0;
+  margin-left: 4rpx;
+  // width: 120rpx;
+  // height: 70rpx;
+  // line-height: 70rpx;
+  padding: 8rpx 20rpx;
+}
+.typeItem:nth-child(1){
+  margin-left: 0;
+}
+.scrollBox{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  white-space: nowrap;
+
+}
+.active{
+  color: #000000;
+  font-weight: 700;
+}
+.topOne{
+  position:sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #fff;
+}
+.bcOne{
+  background-color: #fff;
+  width: 100vw;
+}
+.bcOne2{
+  margin: 0 auto;
+}

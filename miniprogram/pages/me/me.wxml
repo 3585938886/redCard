@@ -1,0 +1,135 @@
+<!--pages/me/me.wxml-->
+<import src="../visitorItem/visitorItem"></import>
+<import src="me.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" data="{{customBar,statusBarHeight}}" />
+<view class="" style="width: 100vw;height: 100vh;">
+  <!-- <view class="me_bg white" style="background: url('{{info.bgm}}') no-repeat;background-size: cover;">
+    <Top class="topOne" bg_color="none" isBack="{{true}}" type="1"></Top>
+    <view class="pd">
+      <CompanyInfo ganzhu="{{false}}" data="{{info}}">
+        <view class="relative share_img">
+          <image src="../../images/group379@2x.png"></image>
+          <button open-type="share" class="absolute"></button>
+        </view>
+      </CompanyInfo>
+      <view class="theLabel">
+        <view class="koubei">
+          <view class="text">口碑</view>
+          <view class="num">{{info.opinions}}
+            <span wx:if="{{info.opinions<60}}">低</span>
+            <span wx:if="{{info.opinions>=60&&info.opinions<80}}">中</span>
+            <span wx:if="{{info.opinions>=80}}">高</span>
+          </view>
+        </view>
+        <view class="labels">
+          <view class="label" wx:if="{{info.province}}||{{info.city}}">
+            {{
+            info.province
+            }}
+            {{
+            info.city
+            }}</view>
+          <view class="label" wx:if="{{info.industry}}">
+            {{
+            info.industry
+            }}</view>
+          <view class="label" wx:if="{{info.university}}">
+            {{
+            info.university
+            }}</view>
+        </view>
+      </view>
+      <view class="fs24" style="margin: 40rpx 0 24rpx 0;height: 102rpx;overflow: scroll;">
+        {{info.introduction?info.introduction:''}}
+      </view>
+      <Fan data="{{info}}" type="1">
+        <view class="flex align-center ">
+          <view class="zi_x fs24 text-center" bindtap="caozuo" data-type="1">编辑资料</view>
+        </view>
+      </Fan>
+    </view>
+  </view> -->
+  <view class="me_bg white" wx:if="{{info}}" style="background: url('{{info.bgm}}') no-repeat;background-size: cover;">
+    <Top class="topOne" bg_color="none" isBack="{{true}}" type="1"></Top>
+    <view class="pd">
+      <CompanyInfo ganzhu="{{false}}" data="{{info}}">
+        <view class="tocard" bindtap="toCard">我的名片</view>
+        <view class="relative share_img">
+          <image src="../../images/group379@2x.png"></image>
+          <button open-type="share" class="absolute"></button>
+        </view>
+      </CompanyInfo>
+      <view class="theLabel" wx:if="{{info}}">
+        <view class="koubei empty_demo" wx:if="{{info.opinions}}">
+          <view class="text">口碑</view>
+          <view class="num">{{info.opinions}}
+            <span wx:if="{{info.opinions<60}}">低</span>
+            <span wx:if="{{info.opinions>=60&&info.opinions<80}}">中</span>
+            <span wx:if="{{info.opinions>=80}}">高</span>
+          </view>
+        </view>
+        <view class="labels" wx:if="{{info.province || info.industry || info.university}}">
+          <view class="label1 nowrap" bindtap="tofriendsList" data-title="{{info.city}}" data-thisid="1" wx:if="{{info.province}}||{{info.city}}">
+            {{
+            info.province == info.city?info.city:info.province + info.city
+            }}</view>
+          <view class="label nowrap" wx:if="{{info.industry}}">
+            {{
+            info.industry
+            }}</view>
+          <view class="label nowrap" wx:if="{{info.university}}" bindtap="tofriendsList" data-thisid="3" data-title="{{info.university}}">
+            {{
+            info.university
+            }}</view>
+        </view>
+      </view>
+      <view class="fs24" style="margin: 24rpx 0 0rpx 0;height: 96rpx;overflow: scroll;width: 640rpx;">
+        {{info.introduction?info.introduction:''}}
+      </view>
+      <Fan data="{{info}}" type="1">
+        <view class="flex align-center ">
+          <view class="zi_x fs24 text-center" bindtap="caozuo" data-type="1">编辑资料</view>
+        </view>
+      </Fan>
+    </view>
+  </view>
+  <view class="me_body absolute">
+    <view style="height: 100rpx;" class="bg_white">
+      <view style="transform: translateY(12rpx); " class="bg_white brs">
+        <view class="flex navs fs32 theme4 ">
+          <block wx:for="{{navs}}" wx:key="index">
+            <view class="{{index == currentNav?'theme1':''}}" bindtap="nav" data-index="{{index}}">{{item.name}} <text wx:if="{{index==0 && work.length}}">({{work.length}})</text></view>
+          </block>
+        </view>
+        <view class="bt flex justify-center empty_demo" style="transform: translateX(calc(100% * {{currentNav}}));transition: all .3s ease-in;">
+          <view></view>
+        </view>
+      </view>
+    </view>
+    <scroll-view style="height: calc(100vh - 752rpx);" scroll-y bindscrolltolower="scrolltolower">
+      <view class="authentication flex align-center" wx:if="{{info.is_authentication !=1 && info && currentNav==0}}" bindtap="attestation">
+        <image src="/images/ags.png"></image>
+        <view class="fs24">完善企业认证后方可发布笔记，快去完善吧~</view>
+        <image src="/images/dfh.png"></image>
+      </view>
+      <Work  bind:myevent="onMyEvent" class="{{currentNav==0 && info.is_authentication ==1?'dispaly-block':'display-none'}}" typedel="typedel" data="{{work}}" />
+      <Work class="{{currentNav==1?'dispaly-block':'display-none'}}" collection="collection" data="{{collectionLists}}" />
+      <view class="{{currentNav==2?'dispaly-block':'display-none'}}">
+        <template is="card" data="{{type,visitorLists}}"></template>
+      </view>
+      <view style="margin-top: 100rpx;" wx:if="{{ (currentNav==0 && pages[0].show) || (currentNav==1 && pages[1].show) || (currentNav== 2 && pages[2].show)}}">
+        <noData />
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view hidden="{{currentNav!=0 || dynamics==0 || info.is_authentication !=1}}" class="flex justify-center align-center add fixed" bindtap="dynamic">
+  <image src="../../images/fded.png"></image>
+</view>
+<view wx:if="{{showBtc}}" class="shaowdow {{showBtc?'bbb':''}}" bindtap="clearBtc">
+</view>
+<view class="bottom-tc {{showBtc?'active-tc':''}}">
+  <view bindtap="goDynamic" data-type="image">图片</view>
+  <view bindtap="goDynamic" data-type="video">视频</view>
+  <view bindtap="clearBtc">取消</view>
+</view>

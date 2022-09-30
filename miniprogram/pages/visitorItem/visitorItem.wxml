@@ -1,0 +1,24 @@
+<!--pages/visitorItem.wxml-->
+<template name="card">
+  <view>
+    <block wx:for="{{visitorLists}}" wx:key="index">
+      <view class="visitorItem" bindtap="showInfo" data-id="{{type==3?item.uid:item.uuid}}">
+        <view class="border_b flex align-center">
+          <view class="image_l">
+            <image src="{{item.get_user_info.head || item.get_fans_info.head }}"></image>
+          </view>
+          <view class="word_r">
+            <view class="userName fs28 font-bold">{{item.get_user_info.name || item.get_fans_info.name }} <text wx:if="{{type==1}}">访问了</text></view>
+            <view wx:if="{{type==1}}" class="fs24" style="margin-top: 5rpx;">
+              <view>{{item.desc}}</view>
+              <view class="date1">{{item.created_at}}</view>
+            </view>
+            <view wx:if="{{type==2||type==3}}" class="fs28 theme2 nowrap" style="width:434rpx;margin-top: 10rpx;">{{item.get_user_info.introduction || item.get_fans_info.introduction }}</view>
+          </view>
+          <view class="{{item.show?'active_g_z white':' guanzhu theme'}} text-center fs24" wx:if="{{type==2}}" catchtap="guanzhu" data-index="{{index}}" data-id="{{item.uuid}}">{{!item.show?'已关注':'关注'}}</view>
+          <view class="{{!item.is_follow?'active_g_z white':' guanzhu theme'}} text-center fs24" wx:if="{{type==3}}" catchtap="guanzhu" data-index="{{index}}" data-id="{{item.uid}}">{{item.is_follow?'已互关':'回关'}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

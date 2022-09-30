@@ -1,0 +1,179 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/9/29上午11:25:35
+使用方法：
+在 E:\pj交接\趣神游\one\miniprogram\pages\me\me.wxml 引入模板
+
+```
+<import src="me.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\pj交接\趣神游\one\miniprogram\pages\me\me.wxss 中引入样式
+```
+@import "./me.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view style="width: 100vw;height: 100vh;">
+      <view class="me_bg white sk-image" style="background: url('http://zy-znmp.oss-cn-shanghai.aliyuncs.com/2022-09-28_1664360582_63342086b884a.png') no-repeat;background-size: cover;">
+        <view is="pages/top/top" class="topOne">
+          <view class="relative top--relative" style="height: 84px;background: none;top: 0;left: 0;width: 100%;z-index: 99999;">
+            <view style="height: {{customBar}}px;">
+              <view style="height:{{statusBarHeight}}px;width: 100%;"></view>
+              <view class="flex top--flex align-center top--align-center aaa top--aaa" style="height: {{customBar - statusBarHeight}}px;">
+                <view>
+                  <image class="backBtn top--backBtn sk-image"></image>
+                </view>
+                <view style="width: 100vw;">
+                  <view class="flex top--flex align-center top--align-center top_me top--top_me fs24 top--fs24" style="transform: translateX(-35px);">
+                    <view class="newBtn top--newBtn sk-transparent sk-text-25-0000-852 sk-text" data-type="send" style="background-position-x: 50%;">发现
+                    </view>
+                    <view class="newBtn top--newBtn active top--active sk-transparent sk-text-25-0000-695 sk-text" data-type="me" style="background-position-x: 50%;">我的
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="pd">
+          <view is="pages/companyInfo/companyInfo">
+            <view class="flex companyInfo--flex space-between companyInfo--space-between">
+              <view class="flex companyInfo--flex align-center companyInfo--align-center">
+                <view class="relative companyInfo--relative">
+                  <image class="avatar companyInfo--avatar sk-image" mode="aspectFill"></image>
+                  <image class="sex companyInfo--sex absolute companyInfo--absolute sk-image"></image>
+                </view>
+                <view class="name_r companyInfo--name_r">
+                  <view class="jieshao companyInfo--jieshao">
+                    <text class="fs36 companyInfo--fs36 sk-transparent sk-text-14-2857-447 sk-text sk-pseudo sk-pseudo-circle">游客0362856</text>
+                    <text class="fs28 companyInfo--fs28 sk-transparent sk-text-14-2857-567 sk-text">合肥</text>
+                  </view>
+                  <view class="flex companyInfo--flex align-center companyInfo--align-center">
+                    <view class="fs24 companyInfo--fs24 sk-transparent sk-text-14-2857-68 sk-text">贷款金额k</view>
+                    <image style="width: 16px;height: 16px;margin-left: 10px;" class="sk-image"></image>
+                  </view>
+                </view>
+              </view>
+              <view class="tocard sk-transparent sk-text-30-0000-332 sk-text" style="background-position-x: 50%;">我的名片</view>
+              <view class="relative share_img">
+                <image class="sk-image"></image>
+                <button class="absolute sk-button sk-pseudo sk-pseudo-circle" open-type="share"></button>
+              </view>
+            </view>
+          </view>
+          <view class="theLabel">
+            <view class="koubei">
+              <view class="text sk-transparent sk-text-20-0000-701 sk-text" style="background-position-x: 50%;">口碑</view>
+              <view class="num sk-transparent">89.8
+                <span class="sk-transparent sk-opacity">高</span>
+              </view>
+            </view>
+            <view class="labels">
+              <view class="label sk-transparent sk-text-20-0000-772 sk-text" style="background-position-x: 50%;">
+
+                北京市</view>
+            </view>
+          </view>
+          <view class="fs24 sk-transparent sk-text-14-2857-663 sk-text" style="margin: 12px 0 0px 0;height: 48px;overflow: scroll;width: 320px;">
+            金额合计的空间空间的空间扩大进口看得见看得见的空间华为海思我i五i我i威威i为大家都觉得的课件课件的
+          </view>
+          <view is="pages/fan/fan">
+            <view class="flex fan--flex space-between fan--space-between">
+              <view class="flex fan--flex text-center fan--text-center" style="margin: 12px 0 14px 0;">
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-235 sk-text" style="background-position-x: 50%;">0</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-587 sk-text" style="background-position-x: 50%;">粉丝</view>
+                </view>
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-437 sk-text" style="background-position-x: 50%;">0</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-190 sk-text" style="background-position-x: 50%;">点赞</view>
+                </view>
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-215 sk-text" style="background-position-x: 50%;">1</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-230 sk-text" style="background-position-x: 50%;">收藏</view>
+                </view>
+                <view class="f_s fan--f_s">
+                  <view class="fs28 fan--fs28 font-bold fan--font-bold sk-transparent sk-text-14-2857-887 sk-text" style="background-position-x: 50%;">1</view>
+                  <view class="fs24 fan--fs24 sk-transparent sk-text-14-2857-243 sk-text" style="background-position-x: 50%;">访客</view>
+                </view>
+              </view>
+              <view class="flex align-center">
+                <view class="zi_x fs24 text-center sk-transparent sk-text-30-0000-163 sk-text" data-type="1" style="background-position-x: 50%;">编辑资料</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="me_body absolute">
+        <view class="bg_white" style="height: 50px;">
+          <view class="bg_white brs" style="transform: translateY(6px);">
+            <view class="flex navs fs32 theme4">
+              <view class="theme1 sk-transparent" data-index="0">笔记
+                <text class="sk-transparent sk-text-14-2857-732 sk-text" style="background-position-x: 50%;">(4)</text>
+              </view>
+              <view data-index="1" class="sk-transparent">收藏 </view>
+              <view data-index="2" class="sk-transparent">关注 </view>
+            </view>
+            <view class="bt flex justify-center empty_demo" style="transform: translateX(calc(100% * 0));transition: all .3s ease-in;"></view>
+          </view>
+        </view>
+        <scroll-view scroll-y="true" style="height: calc(100vh - 376px);">
+          <view is="pages/work/work" class="dispaly-block">
+            <view class="zp work--zp flex work--flex flex-wrap work--flex-wrap space-between work--space-between relative work--relative">
+              <view class="zp_c work--zp_c bg_white work--bg_white Box work--Box" data-from="dynamics" data-id="2987" data-index="0" data-type="1">
+                <view class="isTop work--isTop sk-transparent sk-text-23-0769-982 sk-text" style="background-position-x: 50%;">置 顶</view>
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+                <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+                  <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-932 sk-text" style="font-weight: 700;">打卡</view>
+                  <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                    <image class="zp_ar work--zp_ar sk-image"></image>
+                    <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-291 sk-text">游客0362856</view>
+                    <image class="zp_zan work--zp_zan sk-image"></image>
+                    <view class="sk-transparent sk-opacity">0</view>
+                  </view>
+                </view>
+              </view>
+              <view class="zp_c work--zp_c bg_white work--bg_white Box work--Box" data-from="dynamics" data-id="2988" data-index="1" data-type="1">
+                <view class="isTop work--isTop sk-transparent sk-text-23-0769-833 sk-text" style="background-position-x: 50%;">置 顶</view>
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+                <view class="bg_white work--bg_white" style="padding: 8px 7px;">
+                  <view class="fs28 work--fs28 nowrap work--nowrap sk-transparent sk-text-14-2857-242 sk-text" style="font-weight: 700;">cscs</view>
+                  <view class="flex work--flex align-center work--align-center fs20 work--fs20 zp_text work--zp_text">
+                    <image class="zp_ar work--zp_ar sk-image"></image>
+                    <view style="color: #8d8d8d;font-size: 12px;" class="sk-transparent sk-text-14-2857-454 sk-text">游客0362856</view>
+                    <image class="zp_zan work--zp_zan sk-image"></image>
+                    <view class="sk-transparent sk-opacity">0</view>
+                  </view>
+                </view>
+              </view>
+              <view class="zp_c work--zp_c bg_white work--bg_white Box work--Box" data-from="dynamics" data-id="2991" data-index="2" data-type="1">
+                <view class="isTop work--isTop sk-transparent sk-text-23-0769-137 sk-text" style="background-position-x: 50%;">置 顶</view>
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+              </view>
+              <view class="zp_c work--zp_c bg_white work--bg_white Box work--Box" data-from="dynamics" data-id="2989" data-index="3" data-type="1">
+                <view class="isTop work--isTop sk-transparent sk-text-23-0769-570 sk-text" style="background-position-x: 50%;">置 顶</view>
+                <view class="relative work--relative">
+                  <image class="zp_img work--zp_img sk-image" mode="aspectFill"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="flex justify-center align-center add fixed">
+      <image class="sk-image"></image>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

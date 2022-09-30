@@ -1,0 +1,17 @@
+{
+  "name": "simple-card",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@rongcloud/imlib-v4-adapter": "^5.5.1",
+    "crypto-js": "^4.1.1",
+    "js-base64": "^3.7.2"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^2.8.3-1"
+  }
+}

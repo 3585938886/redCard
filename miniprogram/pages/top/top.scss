@@ -1,0 +1,77 @@
+/* pages/top/top.wxss */
+.top_me{
+  height: 60rpx;
+  background: #F7F7F7 ;
+  border: 2rpx solid #F7F7F7;
+  width: 220rpx;
+  border-radius: 31rpx;
+  margin: 0 auto;
+}
+.top_me view{
+  padding: 0 24rpx;
+  color: #3B3B3B;
+}
+.top_me view text{
+  padding-left: 8rpx;
+}
+.me_top_img{
+  width: 32rpx;
+  height: 32rpx;
+}
+.g_img{
+  width: 4rpx;
+  height: 32rpx;
+}
+.active{
+  color: #424242;
+}
+.userNav image{
+   width: 52rpx;
+   height: 52rpx;
+   border-radius: 26rpx;
+   margin-left: 16rpx;
+   margin-right: 16rpx;
+}
+.userMsg2{
+  line-height: 92rpx;
+  margin:0 24rpx 0 12rpx ;
+  color: #ffffff;
+}
+.careBtn{
+  width: 104rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 35rpx;
+  text-align: center;
+  background-color: #EA3E4A ;
+  font-size: 24rpx;
+  // margin-top: 26rpx;
+}
+.noCareBtn{
+  // background-color: #cccccc;
+  // color: #000000;
+  background-color: #ffffff ;
+  color: var(--theme);
+  border: 2rpx solid var(--theme)
+}
+.newBtn{
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 31rpx;
+  background-color: #F7F7F7 ;
+}
+.active{
+  background-color: #FD7171 ;
+  color: #ffffff !important;
+}
+
+.aaa .backBtn{
+  width: 21rpx;
+  height: 36rpx;
+  margin-left: 24rpx;
+  padding: 8rpx 0;
+  padding-right: 24rpx;
+}

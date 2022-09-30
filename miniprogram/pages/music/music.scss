@@ -1,0 +1,24 @@
+/* pages/music/music.wxss */
+.music_c{
+  right: 56rpx;
+  z-index: 999;
+  width: 88rpx;
+  height: 88rpx;
+}
+.music{
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.play{
+   animation: plays 10s ease infinite;
+   transition: all ;
+}
+@keyframes plays{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

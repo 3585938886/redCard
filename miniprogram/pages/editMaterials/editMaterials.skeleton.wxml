@@ -1,0 +1,149 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/9/29上午11:50:55
+使用方法：
+在 E:\pj交接\趣神游\one\miniprogram\pages\editMaterials\editMaterials.wxml 引入模板
+
+```
+<import src="editMaterials.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\pj交接\趣神游\one\miniprogram\pages\editMaterials\editMaterials.wxss 中引入样式
+```
+@import "./editMaterials.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view style="width: 100vw;overflow:hidden">
+      <view class="pd12">
+        <form>
+          <view class="photo">
+            <view class="relative">
+              <image class="tx sk-image" mode="aspectFill"></image>
+              <image class="photo1 sk-image"></image>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-480 sk-text">昵称：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="userName" type="text" value="游客0362856" class="sk-image"></view>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-576 sk-text">性别：</view>
+              <view class="flex space-between" style="width: 120px; margin-right: 12px;">
+                <label class="radio sk-transparent">
+                  <radio value="r1" color="#EFEFEF"></radio>男
+                </label>
+                <label class="radio sk-transparent">
+                  <radio value="r2" color="#EFEFEF"></radio>女
+                </label>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell cell2 flex space-between">
+              <view class="sk-transparent sk-text-31-5789-46 sk-text">背景图：</view>
+              <view class="flex space-between" style="width: 100px;">
+                <image class="skt sk-image" data-img="http://zy-znmp.oss-cn-shanghai.aliyuncs.com/2022-09-28_1664360582_63342086b884a.png"></image>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell cell2 flex space-between">
+              <view class="sk-transparent sk-text-31-5789-950 sk-text">个人简介：</view>
+              <view class="flex space-between" style="width: 240px;">
+                <view class="text-left sk-image" name="introduction" placeholder="有趣的介绍可以吸引粉丝" placeholder-class="placeholderInput" style="width: 240px;" value="金额合计的空间空间的空间扩大进口看得见看得见的空间华为海思我i五i我i威威i为大家都觉得的课件课件的"></view>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-208 sk-text">背景音乐：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="bgm_music" placeholder="上传音乐" placeholder-class="placeholderInput" type="text" value="true" class="sk-image"></view>
+                <view mode="date" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-667 sk-text">联系方式：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="phone" placeholder="手机号码" placeholder-class="placeholderInput" type="number" value="19378983833" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-963 sk-text">微信：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="wechat" placeholder="填写微信号" placeholder-class="placeholderInput" type="text" value="sfsdf" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-989 sk-text">城市：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view mode="region" value="[]" class="sk-image">
+                  <view class="flex align-center">
+                    <view class="ads f_s32 sk-transparent sk-text-31-5789-548 sk-text" style="background-position-x: 100%;">北京市</view>
+                  </view>
+                </view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-208 sk-text">大学：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="university" placeholder="填写你的大学" placeholder-class="placeholderInput" type="text" value="true" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-202 sk-text">高中：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="high_school" placeholder="填写你的高中" placeholder-class="placeholderInput" type="text" value="true" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-699 sk-text">企业：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="company_name" placeholder="填写你的公司" placeholder-class="placeholderInput" type="text" value="周老师的肥东产业" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+          <view class="formBoj">
+            <view class="cell flex space-between">
+              <view class="sk-transparent sk-text-31-5789-446 sk-text"> 职位：</view>
+              <view class="flex space-between" style="width: 180px;">
+                <view name="job" placeholder="填写职位" placeholder-class="placeholderInput" type="text" value="合肥" class="sk-image"></view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+        </form>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

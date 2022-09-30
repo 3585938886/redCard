@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Top":"../top/top",
+    "Music":"../music/music"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "我的名片"
+}

@@ -1,0 +1,81 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/9/28下午2:15:23
+使用方法：
+在 E:\pj交接\趣神游\one\miniprogram\pages\workDetails\workDetails.wxml 引入模板
+
+```
+<import src="workDetails.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\pj交接\趣神游\one\miniprogram\pages\workDetails\workDetails.wxss 中引入样式
+```
+@import "./workDetails.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="topOne">
+      <view is="pages/top/top" class="top">
+        <view class="relative top--relative" style="height: 84px;background: white;top: 0;left: 0;width: 100%;z-index: 99999;">
+          <view style="height: 84px;">
+            <view style="height:44px;width: 100%;"></view>
+            <view class="flex top--flex align-center top--align-center aaa top--aaa" style="height: 40px;">
+              <view>
+                <image class="backBtn top--backBtn sk-image"></image>
+              </view>
+              <view class="userNav top--userNav flex top--flex align-center top--align-center" data-id="3">
+                <image mode="aspectFill" class="sk-image"></image>
+                <view style="font-size: 12px;" class="sk-transparent sk-text-14-2857-882 sk-text">9月不贴膘</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="headpic">
+        <swiper indicator-dots="true" class="headpic" indicator-active-color="rgba(244, 91, 91, 1)" indicator-color="rgba(221, 221, 221, 1)" current="0" autoplay="false">
+          <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <image data-index="0" mode="aspectFill" class="sk-image"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="detailMsg">
+        <view class="title sk-transparent sk-text-14-2857-351 sk-text">
+          稻梦空间
+        </view>
+        <view class="word sk-transparent sk-text-19-2308-650 sk-text">此景区把赏景与亲子活动融为一体，是一个非常值得一去的地方。稻田画很漂亮，也令人震撼。</view>
+        <view class="bottom">
+          <view class="flex space-between">
+            <view class="date sk-transparent sk-text-32-5000-951 sk-text">2022/09/24</view>
+            <view class="btns flex space-between">
+              <view>
+                <image class="sk-image"></image>
+                <text class="sk-transparent sk-opacity">1</text>
+              </view>
+              <view>
+                <image class="sk-image"></image>
+                <view class="textOne sk-transparent sk-opacity">0</view>
+              </view>
+              <view class="relative">
+                <image class="sk-image"></image>
+                <button class="absolute shareBtn sk-button sk-pseudo sk-pseudo-circle" open-type="share" size="mini"></button>
+              </view>
+              <view>
+                <image class="sk-image"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="line-block"></view>
+      <view class="detailMsg">
+        <view class="comments">
+          <view class="comments_title sk-transparent sk-text-14-2857-485 sk-text">评论（0条）</view>
+        </view>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

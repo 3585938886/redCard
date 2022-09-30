@@ -1,0 +1,100 @@
+<!--pages/comment.wxml-->
+<view>
+  <block wx:for="{{comment}}" wx:key="index">
+    <view class="comments_line2 flex space-between">
+      <view class="comments_image">
+        <image src="{{item.get_user_info.head}}"></image>
+      </view>
+      <view class="comments_words">
+        <view class="user">
+          <view>
+          {{item.get_user_info.name}}
+          <text class="author" hidden="{{uid != item.get_user_info.id}}">作者</text></view>
+          
+        </view>
+        <view class="lineH">{{item.content}}</view>
+        <view class="space-between flex">
+          <view class="date1 flex space-between">
+            <view style="color:#777171;overflow: hidden;height: 28rpx;">{{item.created_at}} · {{item.province}}</view>
+            <view class="hfBtn" bindtap="reply" data-deplyForm="{{item}}">回复</view>
+          </view>
+          <view class="Izan flex space-between">
+            <view hidden="{{!item.is_support}}" bindtap="setZan" data-type="{{1}}" data-index="{{index}}">
+              <image src="../../images/yidianzanl.png"></image> {{item.support}}
+            </view>
+            <view hidden="{{item.is_support}}"   bindtap="setZan" data-type="{{1}}" data-index="{{index}}">
+              <image src="../../images/pdz.png"></image> {{item.support}}
+            </view>
+            <view hidden="{{!item.is_tread}}" bindtap="setZan" data-type="{{2}}" data-index="{{index}}" style="margin-left:28rpx;">
+              <image src="../../images/pyc.png"></image> {{item.tread}}
+            </view>
+            <view hidden="{{item.is_tread}}" bindtap="setZan" data-type="{{2}}" data-index="{{index}}" style="margin-left:28rpx;">
+              <image src="../../images/chai.png"></image> {{item.tread}}
+            </view>
+          </view>
+        </view>
+
+        <view hidden="{{moreComment.length == 0 || moreComment[0].comments_id != item.id || showMore }}">
+          <block wx:for="{{moreComment}}" wx:for-item="children" wx:for-index="index2" wx:key="index2">
+            <view class="comments_line2 flex space-between">
+              <view class="comments_image">
+                <image src="{{children.get_user_info.head}}"></image>
+              </view>
+              <view class="comments_words comments_words2">
+                <view class="user ">
+                  <view>{{children.get_user_info.name}}   <text class="author" hidden="{{uid != children.get_user_info.id}}">作者</text></view>
+                  <!-- <view class="author" hidden="{{uid != children.get_user_info.id}}">作者</view> -->
+                </view>
+                <view class="lineH"><text class="user" wx:if="{{children.get_comments_reply_user_info}}">
+                <text style="color: red;">回复 </text> <text style="color: rgb(119, 113, 113);"> {{children.get_comments_reply_user_info.name}}</text> <text style="color: black; font-weight: 700;"> : </text></text> {{children.content}}</view>
+                <view class="space-between flex">
+                  <view class="date1 flex space-between">
+                    <view style="color:#777171;overflow: hidden;height: 28rpx;">{{children.created_at}} · {{children.province}} </view>
+                    <view class="hfBtn" bindtap="reply" data-deplyForm="{{children}}">回复</view>
+                  </view>
+                  <view class="Izan flex space-between">
+                    <view hidden="{{!children.is_support}}" bindtap="setZan2" data-type="{{1}}" data-index="{{index2}}">
+                      <image src="../../images/yidianzanl.png"></image> {{children.support}}
+                    </view>
+                    <view hidden="{{children.is_support}}"  bindtap="setZan2" data-type="{{1}}" data-index="{{index2}}">
+                      <image src="../../images/pdz.png"></image> {{children.support}}
+                    </view>
+                    <view hidden="{{!children.is_tread}}" style="margin-left:28rpx;"  bindtap="setZan2" data-type="{{2}}" data-index="{{index2}}">
+                      <image src="../../images/pyc.png"></image> {{children.tread}}
+                    </view>
+                    <view hidden="{{children.is_tread}}" style="margin-left:28rpx;"  bindtap="setZan2" data-type="{{2}}" data-index="{{index2}}">
+                      <image src="../../images/chai.png"></image> {{children.tread}}
+                    </view>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+          </block>
+        </view>
+        <view wx:if="{{item.reply_count!=0}}">
+          <view bindtap="openComments" data-id="{{item.id}}" class="zk" hidden="{{!showMore&&zkid==item.id&&moreShow}}" data-index="{{index}}">
+            展开{{item.reply_count}}条回复 <image src="../../images/zk.png"></image>
+          </view>
+          <view style="width: 200rpx;" hidden="{{showMore||zkid!=item.id}}" class="flex space-between">
+            <view hidden="{{item.reply_count <= 8 || !moreShow || closeMoreBtn}}" bindtap="openComments2" data-id="{{item.id}}" class="zk" >
+            查看更多 <image src="../../images/zk.png"></image>
+          </view>
+          <view bindtap="closeComments" class="zk" >
+            收起 <image src="../../images/sq.png"></image>
+          </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 回复输入框 -->
+  <view wx:if="{{replyName}}" class="shaowdow {{replyName?'bbb':''}}" bindtap="closeReply">
+  </view>
+  <view wx:if="{{replyName}}" class="bottom-tc {{replyName?'active-tc':''}}">
+    <view class="hfBox flex space-between">
+      <view><input type="text" bindconfirm="contentReply" bindinput="wordsInput" value="{{content}}" placeholder="回复{{replyName}}：" /></view>
+      <view class="hfFbBtn" bindtap="contentReply">发表</view>
+    </view>
+  </view>
+</view>

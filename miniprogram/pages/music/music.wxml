@@ -1,0 +1,4 @@
+<!--pages/music/music.wxml-->
+<view class="absolute music_c" style="top: {{customBar+10}}px;">
+  <image src="../../images/group413@2x.png" class="music" animation="{{animationData}}" bindtap="stopRefresh"></image>
+</view>
